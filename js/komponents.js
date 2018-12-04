@@ -170,6 +170,17 @@ const _KomponentZookeeper = Class.extend({
         this.onScreenComponents[name] = this.poppers[name]();
     },
 
+    /**
+     * Should re-render all components with previous state, in non existant push warning an d
+     * spawn new context
+     * @param name
+     */
+    reshowContext: function(name = "default") {
+        this.onScreenComponents[name].forEach(x => {
+            x.__render();
+        });
+    },
+
     clearContext(name = "default") {
         this.onScreenComponents[name].forEach(x => {
             console.warn("Destroying : ", x);
