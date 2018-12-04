@@ -45,28 +45,23 @@
     <div class="container-fluid p-0">
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Valere
-            <span class="text-primary">Tetelin</span>
-          </h1>
-          <div class="subheading mb-5"><span class="text-primary">Scala</span> && Typescript Fullstack Developper
-          </div>
-          <p class="lead mb-5">At <img src="img/cplus.gif" height="16px"/> for <span class="text-primary">2 years</span> now.</p>
-          I am working on a GraphQL gateway and on the main REST API behind all our frontend applications in a team of <span class="text-primary">20 developpers</span><br />
-          Working with Scalable Reactive systems on a daily basis, with the help of <span class="text-primary">Play!</span> Framework, <span class="text-primary">Akka</span>, <span class="text-primary">Kafka</span>, <span class="text-primary">Cassandra</span> and <span class="text-primary">Redis</span>.<br />
-          Convinced by <span class="text-primary">Agile</span> developpement cycle and <span class="text-primary">TDD</span> practices. I'm used to working with AWS, Docker and Immutable State infrastructure (Salt Stack and recently, Kubernetes) <br />
-          I used to be a Frontend consultant working on many Canal+'s technical backoffices.<br />
-          I was hired after some month in an Internship while working on an Engineering Degree at EPITA.<br />
-          I mainly do Scala but I am from a Frontend world I am still working on javascript libraries for CanalPlus frontend developpers and some R&D frontend applications.
-          <br /> <br />
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/valere-tetelin-514323b7/">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/DKFN">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
+        <div class="loader loader--style1" title="0">
+          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+  <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+  <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+    C22.32,8.481,24.301,9.057,26.013,10.047z">
+    <animateTransform attributeType="xml"
+      attributeName="transform"
+      type="rotate"
+      from="0 20 20"
+      to="360 20 20"
+      dur="0.5s"
+      repeatCount="indefinite"/>
+    </path>
+  </svg>
         </div>
       </section>
 
@@ -313,21 +308,30 @@
     <script src="js/komponents.js"></script>
     <script src="js/Components/MenuEntry.js"></script>
     <script src="js/Components/ExperienceEntry.js"></script>
+    <script src="js/Components/IntroComponent.js"></script>
     <script type="text/javascript">
-      /** Komponent firing ramp */
-      new MenuEntry({anchor: "about", title: "Introduction"});
-      new MenuEntry({anchor: "experience", title: "Professional Experience"});
-      new MenuEntry({anchor: "education", title: "Education"});
-      new MenuEntry({anchor: "skills", title: "Skills"});
-      new MenuEntry({anchor: "teaching", title: "Teaching"});
-      new MenuEntry({anchor: "projects", title: "Personal Projects"});
+        var defaultComponentContext = () => {
+            /** Komponent firing ramp */
+          return [
+            new MenuEntry({anchor: "about", title: "Introduction"}),
+            new MenuEntry({anchor: "experience", title: "Professional Experience"}),
+            new MenuEntry({anchor: "education", title: "Education"}),
+            new MenuEntry({anchor: "skills", title: "Skills"}),
+            new MenuEntry({anchor: "teaching", title: "Teaching"}),
+            new MenuEntry({anchor: "projects", title: "Personal Projects"}),
+            new ExperienceEntry({
+                position: "Scala/Typescript FullStack Developper",
+                company: "Canal+",
+                description: "test :)",
+                durationText: "September 2017 - Present"
+            }),
+            new IntroComponent()
+          ];
+        };
 
-      new ExperienceEntry({
-          position: "Scala/Typescript FullStack Developper",
-          company: "Canal+",
-          description: "test :)",
-          durationText: "September 2017 - Present"
-      });
+        KomponentZookeeper.registerContext("default", defaultComponentContext);
+        KomponentZookeeper.spawnContext("default");
+        setTimeout(() => KomponentZookeeper.clearContext(), 5000);
     </script>
 
   </body>

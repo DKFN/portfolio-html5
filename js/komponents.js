@@ -1,4 +1,5 @@
 var _rKrefs = 0;
+const KOMPONENTS_DEBUG = false;
 
 const Komponent = Class.extend({
     propsBag: undefined, // Props of the component
@@ -12,6 +13,7 @@ const Komponent = Class.extend({
         setHtml: false,
         appendHtml: false,
         customCallback: undefined,
+        containerClassName: undefined,
     },
 
     /**
@@ -23,7 +25,7 @@ const Komponent = Class.extend({
     init: function(childRef, propsBag = undefined, initState = undefined) {
         _rKrefs++;
         const mRef = _rKrefs;
-        console.info("Komponent : Popping component #" + mRef);
+        this._d("Komponent : Popping component #" + mRef);
 
         this.propsBag = propsBag;
         this.childRef = childRef;
@@ -36,7 +38,7 @@ const Komponent = Class.extend({
         this.__batchDiffRender = this.__batchDiffRender.bind(this);
 
         this.__render();
-        console.info("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
+        this._d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
     },
 
     /**
@@ -53,7 +55,7 @@ const Komponent = Class.extend({
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
             domNode.addEventListener("mouseenter", this.childRef.onMouseEnter);
-            console.log("Bindings : ", domNode);
+            this._d("Bindings : ", domNode);
         });
 
     },
@@ -84,7 +86,7 @@ const Komponent = Class.extend({
     __spawnChildComponent: function() {
         $(document).ready(() => {
             const targetDom = `
-                <div id="${this.diffIdentifier}" class="komponent-differ-flag">
+                <div id="${this.diffIdentifier}" style="unset:all;" class="komponent-differ-flag ${this.renderMethod.containerClassName || ""} ">
                     ${this.renderedDom}
                 </div>
             `;
@@ -116,6 +118,10 @@ const Komponent = Class.extend({
         });
     },
 
+    __destroy: function() {
+        $("#" + this.diffIdentifier).html("Destroyed");
+    },
+
     /** Komponent API */
     postRenderCallback: undefined,
     preRenderCallback: undefined,
@@ -128,8 +134,50 @@ const Komponent = Class.extend({
      */
     setState: function(targetState, afterCallBack) {
         this.state = Object.assign(this.state, targetState);
-        console.warn("State update : ", this.state);
+        this._d("State update : ", this.state);
         this.__render();
         afterCallBack && afterCallBack();
+    },
+
+    _d(text, object) {
+        if (!KOMPONENTS_DEBUG)
+            return;
+        object ? console.info(text, object) : console.info(text);
     }
 });
+
+const _KomponentZookeeper = Class.extend({
+    instances: [],
+    poppers: [], // Array of component function poppers and destroyers
+    onScreenComponents: [],
+
+    init: function() {
+        this.spawnContext = this.spawnContext.bind(this);
+        this.registerContext = this.registerContext.bind(this);
+        this.clearContext = this.clearContext.bind(this);
+    },
+
+    registerContext: function(name, componentsFunction) {
+        this.poppers[name] = componentsFunction;
+    },
+
+    spawnContext: function(name) {
+        if (!this.poppers[name]) {
+            console.error("Komponent: Context not found : ", name);
+        }
+
+        ///FIXME:  Should store on screen per context to allow partial context load and disload
+        this.onScreenComponents[name] = this.poppers[name]();
+    },
+
+    clearContext(name = "default") {
+        this.onScreenComponents[name].forEach(x => {
+            console.warn("Destroying : ", x);
+            x.__destroy();
+        });
+    }
+
+});
+
+const KomponentZookeeper = new _KomponentZookeeper();
+window.KomponentZookeeper = KomponentZookeeper;
