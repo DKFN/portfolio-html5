@@ -23,7 +23,6 @@
   </head>
 
   <body id="page-top">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Valere Tetelin</span>
@@ -39,6 +38,8 @@
 
         </ul>
       </div>
+        <div style="display: blockheight: 50px; bottom: 0; width:100%;" id="lang-container">
+        </div>
     </nav>
 
     <div class="container-fluid p-0">
@@ -248,13 +249,19 @@
     <script src="js/Components/ExperienceEntry.js"></script>
     <script src="js/Components/IntroComponent.js"></script>
     <script src="js/Components/LoaderComponent.js"></script>
+    <script src="js/Components/LangComponent.js"></script>
     <script type="text/javascript">
+        const langContext = () => {
+          return [
+              new LangComponent({fetchData: fetchData}),
+          ]
+        };
 
         // Here I Use currting so I can pass any container id I want to Komponent and make a loading wherever I want
         const loadersComponentContext = (trgt) => () => {
             return [
                 new LoaderComponent({targetContainer: trgt}),
-            ]
+            ];
         };
 
         // Here it is the same idea, I will get data from the server, and the Zookeeper will need a function to spawn
@@ -301,11 +308,11 @@
             });
         };
 
-
-
         // I first spwan the loading spinner, I register it as "default", as it is the fallback context
         // After registering it to the Zookeeper I can spawn it on the screen
         KomponentZookeeper.registerContext("default", loadersComponentContext(".navbar-nav"));
+        KomponentZookeeper.registerContext("lang", langContext);
+        KomponentZookeeper.spawnContext("lang");
         fetchData("en");
     </script>
 

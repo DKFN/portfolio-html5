@@ -25,7 +25,7 @@ const Komponent = Class.extend({
     init: function(childRef, propsBag = undefined, initState = undefined) {
         _rKrefs++;
         const mRef = _rKrefs;
-        this._d("Komponent : Popping component #" + mRef);
+        KomponentDebug_d("Komponent : Popping component #" + mRef);
 
         this.propsBag = propsBag;
         this.childRef = childRef;
@@ -38,7 +38,7 @@ const Komponent = Class.extend({
         this.__batchDiffRender = this.__batchDiffRender.bind(this);
 
         this.__render();
-        this._d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
+        KomponentDebug_d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
     },
 
     /**
@@ -56,7 +56,7 @@ const Komponent = Class.extend({
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
             domNode.addEventListener("mouseenter", this.childRef.onMouseEnter);
-            this._d("Bindings : ", domNode);
+            KomponentDebug_d("Bindings : ", domNode);
         });
 
     },
@@ -138,20 +138,17 @@ const Komponent = Class.extend({
      */
     setState: function(targetState, afterCallBack) {
         this.state = Object.assign(this.state, targetState);
-        this._d("State update : ", this.state);
+        KomponentDebug_d("State update : ", this.state);
         this.__render();
         afterCallBack && afterCallBack();
     },
+});
 
-    /**
-     * Simply verbose debug
-     */
-    _d(text, object) {
+const KomponentDebug_d = function(text, object) {
         if (!KOMPONENTS_DEBUG)
             return;
         object ? console.info(text, object) : console.info(text);
-    }
-});
+    };
 
 const _KomponentZookeeper = Class.extend({
     instances: [],
@@ -168,6 +165,7 @@ const _KomponentZookeeper = Class.extend({
      * Register a context spawner callback
      */
     registerContext: function(name, componentsFunction) {
+        this.onScreenComponents[name] = undefined;
         this.poppers[name] = componentsFunction;
     },
 
@@ -188,7 +186,7 @@ const _KomponentZookeeper = Class.extend({
         }
 
 
-        console.warn("Spawning: ", this.poppers[name]);
+        KomponentDebug_d("Spawning: ", this.poppers[name]);
 
         this.onScreenComponents[name] = this.poppers[name]();
     },
@@ -200,7 +198,7 @@ const _KomponentZookeeper = Class.extend({
      */
     reshowContext: function(name = "default") {
         if (!this.onScreenComponents[name]){
-            console.error("Komponents Zookeeper: Unable to find previous context, spawning new one");
+            KomponentDebug_d("Komponents Zookeeper: Unable to find previous context, spawning new one");
             this.spawnContext(name);
             return ;
         }
@@ -218,7 +216,7 @@ const _KomponentZookeeper = Class.extend({
         if (!this.onScreenComponents[name])
             return;
         this.onScreenComponents[name].forEach(x => {
-            console.warn("Destroying : ", x);
+            KomponentDebug_d("Destroying : ", x);
             x.__destroy();
         });
     }
