@@ -30,6 +30,6 @@ const MenuEntry = Komponent.extend({
     },
 
     onMouseLeave: function(event) {
-        setTimeout(() => this.setState({in: false}), 200);
+        this.setState({in: false});
     }
 });

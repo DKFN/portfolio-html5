@@ -312,6 +312,7 @@
     <script src="js/inherithance.js"></script>
     <script src="js/komponents.js"></script>
     <script src="js/Components/MenuEntry.js"></script>
+    <script src="js/Components/ExperienceEntry.js"></script>
     <script type="text/javascript">
       /** Komponent firing ramp */
       new MenuEntry({anchor: "about", title: "Introduction"});
@@ -320,6 +321,13 @@
       new MenuEntry({anchor: "skills", title: "Skills"});
       new MenuEntry({anchor: "teaching", title: "Teaching"});
       new MenuEntry({anchor: "projects", title: "Personal Projects"});
+
+      new ExperienceEntry({
+          position: "Scala/Typescript FullStack Developper",
+          company: "Canal+",
+          description: "test :)",
+          durationText: "September 2017 - Present"
+      });
     </script>
 
   </body>
