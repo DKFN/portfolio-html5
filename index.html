@@ -37,24 +37,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Introduction</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Professional Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Mentoring</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Personal Projects</a>
-          </li>
+
         </ul>
       </div>
     </nav>
@@ -326,6 +309,18 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+    <script src="js/inherithance.js"></script>
+    <script src="js/komponents.js"></script>
+    <script src="js/Components/MenuEntry.js"></script>
+    <script type="text/javascript">
+      /** Komponent firing ramp */
+      new MenuEntry({anchor: "about", title: "Introduction"});
+      new MenuEntry({anchor: "experience", title: "Professional Experience"});
+      new MenuEntry({anchor: "education", title: "Education"});
+      new MenuEntry({anchor: "skills", title: "Skills"});
+      new MenuEntry({anchor: "teaching", title: "Teaching"});
+      new MenuEntry({anchor: "projects", title: "Personal Projects"});
+    </script>
 
   </body>
 

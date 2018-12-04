@@ -1,0 +1,3 @@
+const ExperienceEntry = Komponent.extend({
+
+});
