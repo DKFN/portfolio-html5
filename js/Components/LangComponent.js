@@ -14,7 +14,6 @@ const LangComponent = Komponent.extend({
     },
 
     onClick: function() {
-       console.log(this);
        this.setState(
            {currentLang: this.state.currentLang === "fr" ? "en" : "fr"},
            () => this.propsBag.fetchData(this.state.currentLang)

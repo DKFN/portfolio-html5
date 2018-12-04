@@ -67,7 +67,7 @@ const Komponent = Class.extend({
      */
     __render: function() {
         if (!this.childRef.render) {
-            console.error("Komponent error: Unable to find render implementation. Ref dump : ", this.childRef);
+            console && console.error("Komponent error: Unable to find render implementation. Ref dump : ", this.childRef);
         }
         this.renderedDom = this.childRef.render();
 

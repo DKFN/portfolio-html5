@@ -12,7 +12,6 @@ const MenuEntry = Komponent.extend({
     },
 
     render: function() {
-        console.log("Render loop : ", this);
         return `
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#${this.propsBag.anchor}">
