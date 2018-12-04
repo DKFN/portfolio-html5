@@ -1,0 +1,10 @@
+{
+	"menuEntries": [
+		{"anchor": "about", "title": "Introduction"},
+		{"anchor": "experience", "title": "Experience Professionelle"},
+		{"anchor": "education", "title": "Etudes"},
+		{"anchor": "skills", "title": "Competences"},
+		{"anchor": "teaching", "title": "Apprentissage"},
+		{"anchor": "projects", "title": "Projets Personnels"}
+	]
+}
