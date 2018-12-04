@@ -20,7 +20,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/resume.css" rel="stylesheet">
-
   </head>
 
   <body id="page-top">
@@ -45,23 +44,7 @@
     <div class="container-fluid p-0">
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="loader loader--style1" title="0">
-          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-  <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
-    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
-    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
-  <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
-    C22.32,8.481,24.301,9.057,26.013,10.047z">
-    <animateTransform attributeType="xml"
-      attributeName="transform"
-      type="rotate"
-      from="0 20 20"
-      to="360 20 20"
-      dur="0.5s"
-      repeatCount="indefinite"/>
-    </path>
-  </svg>
+
         </div>
       </section>
 
@@ -69,52 +52,7 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
         <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">March 2013 - Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">December 2011 - March 2013</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Junior Web Designer</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2010 - December 2011</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Design Intern</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
-
+          <h2 class="mb-5">Experience</div>
         </div>
 
       </section>
@@ -309,30 +247,66 @@
     <script src="js/Components/MenuEntry.js"></script>
     <script src="js/Components/ExperienceEntry.js"></script>
     <script src="js/Components/IntroComponent.js"></script>
+    <script src="js/Components/LoaderComponent.js"></script>
     <script type="text/javascript">
-        var defaultComponentContext = () => {
+
+        // Here I Use currting so I can pass any container id I want to Komponent and make a loading wherever I want
+        const loadersComponentContext = (trgt) => () => {
+            return [
+                new LoaderComponent({targetContainer: trgt}),
+            ]
+        };
+
+        // Here it is the same idea, I will get data from the server, and the Zookeeper will need a function to spawn
+        // my compoenents.
+        // I render all my menu with the data I got from the JSON
+        const indexContext = (data) => () => {
             /** Komponent firing ramp */
-          return [
-            new MenuEntry({anchor: "about", title: "Introduction"}),
-            new MenuEntry({anchor: "experience", title: "Professional Experience"}),
-            new MenuEntry({anchor: "education", title: "Education"}),
-            new MenuEntry({anchor: "skills", title: "Skills"}),
-            new MenuEntry({anchor: "teaching", title: "Teaching"}),
-            new MenuEntry({anchor: "projects", title: "Personal Projects"}),
-            new ExperienceEntry({
-                position: "Scala/Typescript FullStack Developper",
-                company: "Canal+",
-                description: "test :)",
-                durationText: "September 2017 - Present"
+            console.log("From lambda data : ", data);
+            return [
+              ...data.menuEntries.map((x) => {
+                return new MenuEntry(x)
+              }),
+              new IntroComponent(),
+              new ExperienceEntry({
+              position: "Scala/Typescript FullStack Developper",
+              company: "Canal+",
+              description: "test :)",
+              durationText: "September 2017 - Present"
             }),
-            new IntroComponent()
           ];
         };
 
-        KomponentZookeeper.registerContext("default", defaultComponentContext);
-        KomponentZookeeper.spawnContext("default");
-        setTimeout(() => KomponentZookeeper.clearContext(), 5000);
-        setTimeout(() => KomponentZookeeper.reshowContext(), 7000);
+
+        // Here it is how I fetch the lang for the user, see I spawn the
+        const fetchData = (targetLang) => {
+            KomponentZookeeper.spawnContext("default");
+            KomponentZookeeper.clearContext("index");
+            $.ajax({
+                url: "langs/" + targetLang + ".json",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    KomponentZookeeper.registerContext("index", indexContext(data));
+                    setTimeout(() => {
+                        $(document).ready(() => {
+                            KomponentZookeeper.reshowContext("index");
+                            KomponentZookeeper.clearContext("default");
+                        });
+                    }, 300);
+                },
+                crossDomain: true,
+            }).done(function (data) {
+                console.log(data)
+            });
+        };
+
+
+
+        // I first spwan the loading spinner, I register it as "default", as it is the fallback context
+        // After registering it to the Zookeeper I can spawn it on the screen
+        KomponentZookeeper.registerContext("default", loadersComponentContext(".navbar-nav"));
+        fetchData("en");
     </script>
 
   </body>

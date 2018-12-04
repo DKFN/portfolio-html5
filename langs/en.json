@@ -1,0 +1,10 @@
+{
+	"menuEntries": [
+		{"anchor": "about", "title": "Introduction"},
+		{"anchor": "experience", "title": "Professional Experience"},
+		{"anchor": "education", "title": "Education"},
+		{"anchor": "skills", "title": "Skills"},
+		{"anchor": "teaching", "title": "Teaching"},
+		{"anchor": "projects", "title": "Personal Projects"}
+	]
+}

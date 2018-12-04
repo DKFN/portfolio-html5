@@ -51,6 +51,7 @@ const Komponent = Class.extend({
             if (!domNode) {
                 console && console.error("Unable to find the Komponent@"+this.diffIdentifier);
                 console && console.error("This is probably a lifeCycle error, current component state : ", this);
+                return ;
             }
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
@@ -110,6 +111,9 @@ const Komponent = Class.extend({
         });
     },
 
+    /**
+     * Persists DOM mutation for the given component
+     */
     __batchDiffRender: function() {
         // Safeguard for the user state mutating before DOM rendered first, may trigger container div unavailable
         // at lease here it will be batched after all DOM is rendered.
@@ -119,7 +123,7 @@ const Komponent = Class.extend({
     },
 
     __destroy: function() {
-        $("#" + this.diffIdentifier).html("Destroyed");
+        $("#" + this.diffIdentifier).html("<!-- Destroyed by Komponent(@"+ this.diffIdentifier+")");
     },
 
     /** Komponent API */
@@ -139,6 +143,9 @@ const Komponent = Class.extend({
         afterCallBack && afterCallBack();
     },
 
+    /**
+     * Simply verbose debug
+     */
     _d(text, object) {
         if (!KOMPONENTS_DEBUG)
             return;
@@ -157,16 +164,32 @@ const _KomponentZookeeper = Class.extend({
         this.clearContext = this.clearContext.bind(this);
     },
 
+    /**
+     * Register a context spawner callback
+     */
     registerContext: function(name, componentsFunction) {
         this.poppers[name] = componentsFunction;
     },
 
+    /**
+     * Shows a context to the user screen, if it was previously loaded it keeps its state
+     * @param name
+     */
     spawnContext: function(name) {
         if (!this.poppers[name]) {
-            console.error("Komponent: Context not found : ", name);
+            console.error("Komponent Zookeeper: Context not found : ", name);
+            return;
         }
 
-        ///FIXME:  Should store on screen per context to allow partial context load and disload
+        if (typeof this.poppers[name] !== "function") {
+            console.error("Komponent Zookeeper : Context is not a function: ", name);
+            console.error("Komponent Zookeeper : You should pass function like: functionName not functionName(): ", name);
+            return ;
+        }
+
+
+        console.warn("Spawning: ", this.poppers[name]);
+
         this.onScreenComponents[name] = this.poppers[name]();
     },
 
@@ -176,12 +199,24 @@ const _KomponentZookeeper = Class.extend({
      * @param name
      */
     reshowContext: function(name = "default") {
+        if (!this.onScreenComponents[name]){
+            console.error("Komponents Zookeeper: Unable to find previous context, spawning new one");
+            this.spawnContext(name);
+            return ;
+        }
+
         this.onScreenComponents[name].forEach(x => {
             x.__render();
         });
     },
 
+
+    /**
+     * Hides a particular context to the user screen
+     */
     clearContext(name = "default") {
+        if (!this.onScreenComponents[name])
+            return;
         this.onScreenComponents[name].forEach(x => {
             console.warn("Destroying : ", x);
             x.__destroy();
