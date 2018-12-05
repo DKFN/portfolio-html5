@@ -14,6 +14,7 @@ const Komponent = Class.extend({
         appendHtml: false,
         customCallback: undefined,
         containerClassName: undefined,
+        dontWrap: false,
     },
 
     /**
@@ -30,12 +31,14 @@ const Komponent = Class.extend({
         this.propsBag = propsBag;
         this.childRef = childRef;
         this.state = initState;
+        // FIXME: Let user override to desired
         this.diffIdentifier = "kompontent-differ-node-" + mRef;
 
         this.__render = this.__render.bind(this);
         this.__spawnChildComponent = this.__spawnChildComponent.bind(this);
         this.__eventsBinder = this.__eventsBinder.bind(this);
         this.__batchDiffRender = this.__batchDiffRender.bind(this);
+        this.__wrap = this.__wrap.bind(this);
 
         this.__render();
         KomponentDebug_d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
@@ -47,12 +50,13 @@ const Komponent = Class.extend({
      */
     __eventsBinder: function() {
         $(document).ready(() => {
-        const domNode = document.getElementById(this.diffIdentifier);
+        const domNode = $("#" + this.diffIdentifier)[0];
             if (!domNode) {
                 console && console.error("Unable to find the Komponent@"+this.diffIdentifier);
                 console && console.error("This is probably a lifeCycle error, current component state : ", this);
                 return ;
             }
+            console.log(domNode);
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
             domNode.addEventListener("mouseenter", this.childRef.onMouseEnter);
@@ -86,11 +90,7 @@ const Komponent = Class.extend({
      */
     __spawnChildComponent: function() {
         $(document).ready(() => {
-            const targetDom = `
-                <div id="${this.diffIdentifier}" style="unset:all;" class="komponent-differ-flag ${this.renderMethod.containerClassName || ""} ">
-                    ${this.renderedDom}
-                </div>
-            `;
+            const targetDom = this.__wrap();
 
             if (this.childRef.preRenderCallback)
                 this.childRef.preRenderCallback();
@@ -111,6 +111,17 @@ const Komponent = Class.extend({
         });
     },
 
+    __wrap: function() {
+        // FIXME : Wierd behavior
+        return this.renderMethod.dontWrap
+            ? this.renderedDom
+            :`
+                <div id="${this.diffIdentifier}" style="unset:all;" class="komponent-differ-flag ${this.renderMethod.containerClassName || ""} ">
+                    ${this.renderedDom}
+                </div>
+            `;
+    },
+
     /**
      * Persists DOM mutation for the given component
      */
@@ -118,7 +129,7 @@ const Komponent = Class.extend({
         // Safeguard for the user state mutating before DOM rendered first, may trigger container div unavailable
         // at lease here it will be batched after all DOM is rendered.
         $(document).ready(() => {
-            $("#" + this.diffIdentifier).html(this.renderedDom);
+            $("#" + this.diffIdentifier).html(this.__wrap());
         });
     },
 
@@ -167,6 +178,20 @@ const _KomponentZookeeper = Class.extend({
     registerContext: function(name, componentsFunction) {
         this.onScreenComponents[name] = undefined;
         this.poppers[name] = componentsFunction;
+    },
+
+    /**
+     * Allows nesting of components, shows a components ands binds it to a context (and will be destroyed and updated as is)
+     * @param name
+     * @param component
+     */
+    spawnToContext: function(name, component) {
+        if (!this.onScreenComponents[name]) {
+            console.error("Komponent Zookeeper: Context not on screen");
+            console.error("Komponent Zookeeper: You cannot spawn a component to a non active context. @" + name, component);
+        }
+        this.onScreenComponents[name][this.onScreenComponents[name].length || 0] = component;
+        component.__render();
     },
 
     /**
