@@ -6,5 +6,91 @@
 		{"anchor": "skills", "title": "Competences"},
 		{"anchor": "teaching", "title": "Apprentissage"},
 		{"anchor": "projects", "title": "Projets Personnels"}
-	]
+	],
+    "intro": {
+      "title": "Developpeur <span class='text-primary'>Scala</span> && Typescript",
+      "currentPosition": "Chez <img src='img/cplus.gif' height='16px'/> depuis <span class='text-primary'>2 ans</span>.",
+      "body": [
+        "I am working on a GraphQL gateway and on the main REST API behind all our frontend applications in a team of <span class'text-primary'>20 developpers</span><br />",
+        "Working with Scalable Reactive systems on a daily basis, with the help of <span class='text-primary'>Play!</span> Framework, <span class='text-primary'>Akka</span>, <span class='text-primary'>Kafka</span>, <span class='text-primary'>Cassandra</span> and <span class='text-primary'>Redis</span>.<br />",
+        "Convinced by <span class='text-primary'>Agile</span> developpement cycle and <span class='text-primary'>TDD</span> practices. I'm used to working with AWS, Docker and Immutable State infrastructure (Salt Stack and recently, Kubernetes) <br />",
+        "I used to be a Frontend consultant working on many Canal+'s technical backoffices.<br />",
+        "I was hired after some month in an Internship while working on an Engineering Degree at EPITA.<br />",
+        "I mainly do Scala but I am from a Frontend world I am still working on javascript libraries for CanalPlus frontend developpers and some R&D frontend applications."
+      ]
+    },
+	"experiences": [
+      {
+        "position": "Developpeur FullStack Scala/Typescript",
+        "description": "Au sein de la Direction Technique et Distribution je travaille dans une equipe de 50 personnes. Challenge quotidiennement sur des problemes de performance et de qualite a forte charge, j'interviens sur differents projets en Scala, Java et Typescript dans un environnement Agile et eXtreme Programming, j'ai pour habitude d'etre polyvalent et peu occasionnelement faire du DevOps, du RUN (taches de production), des librairies javascript, des utilitaires CLI ou la mise en place d'integrations et de deploiments continus ainsi que du peer-programming, des formations intenes et de la redaction de documentation",
+        "durationText": "Septembre 2017 - Aujourd'hui",
+        "company": "Canal+",
+        "companyImg": "<img src='img/cplus.gif' height='16px'/>",
+        "ShowMore": {
+          "projects": [
+            {
+              "title": "HAPI",
+              "backdrop": "noBackdrop",
+              "description": "HAPI est le backend de Canal+ responsable de la gestion du catalogue, des lectures, de la recommandation, la recherche ainsi que les droits des portails A la demande et Live du groupe Canal. Avec une forte charge et une grande diversite de clients (Boxes FAI, Mobiles, Web, Consoles, SmartTV).",
+              "techs": [
+                "Scala",
+                "Play! Framework",
+                "Cassandra",
+                "Redis",
+                "ElasticSearch",
+                "MicroServices",
+                "AWS",
+                "NGINX"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "position": "Developpeur FullStack PHP/Javascript et Typescript",
+        "description": "Test",
+        "company": "Omnilog",
+        "durationText": "Septembre 2016 - Aout 2017",
+        "showMore": {
+          "projects": [
+            {
+              "title": "IHM Visio",
+              "backdrop": "noBackdrop",
+              "description": "Creation d'une interface qui permet de consulter en temps reel les statistiques de consommation Live et les raports d'audience du CSA pour tous les operateurs francais.",
+              "techs": [
+                "PHP",
+                "Symfony2",
+                "Javascript",
+                "RaphaelJS",
+                "HTML5",
+                "Bootstrap"
+              ]
+            },
+            {
+              "title": "IHM BDDPe : Newsletter V3",
+              "backdrop": "noBackdrop",
+              "description": "Creation de l'interface Nesletter3 permet d'envoyer aux abonnes des newsletters hebdomadaires personnalisees selon leurs offres. Elle contiens un language de templating, un algorithme de preselection de diffusions, une interface pour la selection manuelle ainsi qu'un connexion a l'API des serveurs de mailling pour une diffusion simple",
+              "techs": [
+                "PHP",
+                "Zend Framework",
+                "OracleSQL",
+                "JavaScript",
+                "HTML4",
+                "JSON",
+                "REST"
+              ]
+            }
+          ]
+        }
+      }
+	],
+  "education": [
+    {
+      "onClick": "Here HTML",
+      "position": "Master d'Expertise en Ingeniere Informatique",
+      "durationText": "Septembre 2017 - Aujourd'hui",
+      "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
+      "company": "EPITA (Ecode Pour l'Informatique et les Techniques Avancees"
+    }
+  ]
 }

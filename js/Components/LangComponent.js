@@ -5,7 +5,7 @@ const LangComponent = Komponent.extend({
    },
 
     init: function(props) {
-        this._super(this, props, {currentLang: "en"});
+        this._super(this, props, {currentLang: "fr"});
         this.onClick = this.onClick.bind(this);
     },
 

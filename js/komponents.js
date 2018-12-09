@@ -54,6 +54,7 @@ const Komponent = Class.extend({
             if (!domNode) {
                 console && console.error("Unable to find the Komponent@"+this.diffIdentifier);
                 console && console.error("This is probably a lifeCycle error, current component state : ", this);
+                console && console.error("Or maybe you did dontWrap but forgot diff ? ");
                 return ;
             }
             console.log(domNode);
@@ -97,10 +98,10 @@ const Komponent = Class.extend({
 
             let executor = this.childRef.renderMethod.customCallback;
             executor = this.childRef.renderMethod.setHtml ? (_rDom) => {
-                $(this.childRef.renderMethod.targetContainer).html(_rDom);
+                $(this.__getSelector()).html(_rDom);
             } : executor;
             executor = this.childRef.renderMethod.appendHtml ? (_rDom) => {
-                $(this.childRef.renderMethod.targetContainer).append(_rDom);
+                $(this.__getSelector()).append(_rDom);
             } : executor;
             executor(targetDom);
 
@@ -111,12 +112,25 @@ const Komponent = Class.extend({
         });
     },
 
+    __getSelector: function() {
+       const renderSelector = this.childRef.renderMethod.spawnInFather === true
+       ? "#" + this.fatherKomponent.diffIdentifier + " > " + this.childRef.renderMethod.targetContainer
+       : this.childRef.renderMethod.targetContainer;
+       console.log("Render selector : ", renderSelector);
+       return renderSelector;
+    },
+
     __wrap: function() {
         // FIXME : Wierd behavior
         return this.renderMethod.dontWrap
             ? this.renderedDom
             :`
-                <div id="${this.diffIdentifier}" style="unset:all;" class="komponent-differ-flag ${this.renderMethod.containerClassName || ""} ">
+                <div 
+                    id="${this.diffIdentifier}" 
+                    style="unset:all;" 
+                    class="komponent-differ-flag ${this.renderMethod.containerClassName || ""}"
+                    >
+                    <!-- You can disable wrapper div in renderMethod but if you rely on state you Must defined the diffIdentifier !-->
                     ${this.renderedDom}
                 </div>
             `;
@@ -134,6 +148,7 @@ const Komponent = Class.extend({
     },
 
     __destroy: function() {
+        this.childRef.onDestroyCallback && this.childRef.onDestroyCallback();
         $("#" + this.diffIdentifier).html("<!-- Destroyed by Komponent(@"+ this.diffIdentifier+")");
     },
 
@@ -153,13 +168,11 @@ const Komponent = Class.extend({
         this.__render();
         afterCallBack && afterCallBack();
     },
-});
 
-const KomponentDebug_d = function(text, object) {
-        if (!KOMPONENTS_DEBUG)
-            return;
-        object ? console.info(text, object) : console.info(text);
-    };
+    registerFather: function(father) {
+        this.fatherKomponent = father;
+    }
+});
 
 const _KomponentZookeeper = Class.extend({
     instances: [],
@@ -244,9 +257,25 @@ const _KomponentZookeeper = Class.extend({
             KomponentDebug_d("Destroying : ", x);
             x.__destroy();
         });
+    },
+
+    /**
+     * In case of high memory usage, will unset all context on screen
+     * You will loose all state of components and it wil retrigger spawn function when called show
+     * @param name
+     */
+    forceFlushContext(name = "default") {
+        this.onScreenComponents[name] = undefined;
     }
 
 });
+
+const KomponentDebug_d = function(text, object) {
+        if (!KOMPONENTS_DEBUG)
+            return;
+        object ? console.info(text, object) : console.info(text);
+    };
+
 
 const KomponentZookeeper = new _KomponentZookeeper();
 window.KomponentZookeeper = KomponentZookeeper;

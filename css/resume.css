@@ -191,3 +191,70 @@ a {
 a:hover, a:focus, a:active {
   color: darkred;
 }
+
+.resume-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-click-more {
+  border: 1px solid red;
+    border-radius: 5px;
+    font-size: 18px;
+  max-width: 150px;
+  margin: 20px;
+  padding: 4px 10px 4px 10px;
+}
+
+.resume-click-more:hover {
+  background-color: red;
+  transition-duration: 150ms;
+  color: black;
+}
+
+.resume.resume-click-more:active {
+  background: #343a40;
+}
+
+#lang-container {
+  color: white;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: red;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: red;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  color: white;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {bottom: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
