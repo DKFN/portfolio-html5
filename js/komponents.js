@@ -1,12 +1,13 @@
-var _rKrefs = 0;
-const KOMPONENTS_DEBUG = false;
+let _Komponent_rKrefs = 0;
+const KOMPONENTS_DEBUG = true;
+const KOMPONENTS_WARN = true;
 
 const Komponent = Class.extend({
     propsBag: undefined, // Props of the component
     state: undefined, // State of the component
     childRef: undefined, // Ref to the child, filled when builded
     renderedDom: undefined, // Final DOM after call to child's render()
-    childFirstRendered: undefined, // Lifecycle boolean, does the component created ?
+    componentRendered: undefined, // Lifecycle boolean, does the component created ?
     diffIdentifier: undefined, // Idenfier used on setState() to replace content
     renderMethod: { // Proprieties to be defined by the child component
         targetContainer: undefined,
@@ -24,8 +25,8 @@ const Komponent = Class.extend({
      * @param initState
      */
     init: function(childRef, propsBag = undefined, initState = undefined) {
-        _rKrefs++;
-        const mRef = _rKrefs;
+        _Komponent_rKrefs++;
+        const mRef = _Komponent_rKrefs;
         KomponentDebug_d("Komponent : Popping component #" + mRef);
 
         this.propsBag = propsBag;
@@ -41,6 +42,7 @@ const Komponent = Class.extend({
         this.__wrap = this.__wrap.bind(this);
 
         this.__render();
+        this.childRef.onCreateCallback && this.childRef.onCreateCallback();
         KomponentDebug_d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
     },
 
@@ -57,7 +59,7 @@ const Komponent = Class.extend({
                 console && console.error("Or maybe you did dontWrap but forgot diff ? ");
                 return ;
             }
-            console.log(domNode);
+            KomponentDebug_d(domNode);
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
             domNode.addEventListener("mouseenter", this.childRef.onMouseEnter);
@@ -76,7 +78,7 @@ const Komponent = Class.extend({
         }
         this.renderedDom = this.childRef.render();
 
-        if (!this.childFirstRendered)
+        if (!this.componentRendered)
             this.__spawnChildComponent();
         else
             this.__batchDiffRender();
@@ -108,20 +110,25 @@ const Komponent = Class.extend({
             if (this.childRef.postRenderCallback)
                 this.childRef.postRenderCallback();
 
-            this.childFirstRendered = true;
+            this.componentRendered = true;
         });
     },
 
+    /**
+     * Gets the appropriate selector for component
+     */
     __getSelector: function() {
        const renderSelector = this.childRef.renderMethod.spawnInFather === true
        ? "#" + this.fatherKomponent.diffIdentifier + " > " + this.childRef.renderMethod.targetContainer
        : this.childRef.renderMethod.targetContainer;
-       console.log("Render selector : ", renderSelector);
+       KomponentDebug_d("Render selector : ", renderSelector);
        return renderSelector;
     },
 
+    /**
+     * Wraps or not the element inside a differ for render lifecycle, callbacks etc etc
+     */
     __wrap: function() {
-        // FIXME : Wierd behavior
         return this.renderMethod.dontWrap
             ? this.renderedDom
             :`
@@ -143,13 +150,20 @@ const Komponent = Class.extend({
         // Safeguard for the user state mutating before DOM rendered first, may trigger container div unavailable
         // at lease here it will be batched after all DOM is rendered.
         $(document).ready(() => {
-            $("#" + this.diffIdentifier).html(this.__wrap());
+            $(this.__getSelector()).html(this.__wrap());
         });
     },
 
+    /**
+     * Will clear the node but keeps its props and state
+     * @private
+     */
     __destroy: function() {
         this.childRef.onDestroyCallback && this.childRef.onDestroyCallback();
-        $("#" + this.diffIdentifier).html("<!-- Destroyed by Komponent(@"+ this.diffIdentifier+")");
+        $("#" + this.diffIdentifier).remove();
+
+        // On next render, component will be regenerated fully but will keep same props and state
+        this.componentRendered = false;
     },
 
     /** Komponent API */
@@ -199,10 +213,18 @@ const _KomponentZookeeper = Class.extend({
      * @param component
      */
     spawnToContext: function(name, component) {
+        // FIXME : This is broken
+        console && console.error("Komponent Zookeeper : Sub context api is broken, you have to boilerplate context creation in container component");
         if (!this.onScreenComponents[name]) {
-            console.error("Komponent Zookeeper: Context not on screen");
-            console.error("Komponent Zookeeper: You cannot spawn a component to a non active context. @" + name, component);
+            KomponentDebug_w("Komponent Zookeeper: Context not on screen");
+            KomponentDebug_w("Komponent Zookeeper: Wrapping component rendering. @" + name, component);
+            this.poppers[name] = () => [
+                this.poppers[name](),
+                component()
+            ];
+            return ;
         }
+
         this.onScreenComponents[name][this.onScreenComponents[name].length || 0] = component;
         component.__render();
     },
@@ -257,17 +279,7 @@ const _KomponentZookeeper = Class.extend({
             KomponentDebug_d("Destroying : ", x);
             x.__destroy();
         });
-    },
-
-    /**
-     * In case of high memory usage, will unset all context on screen
-     * You will loose all state of components and it wil retrigger spawn function when called show
-     * @param name
-     */
-    forceFlushContext(name = "default") {
-        this.onScreenComponents[name] = undefined;
     }
-
 });
 
 const KomponentDebug_d = function(text, object) {
@@ -275,6 +287,14 @@ const KomponentDebug_d = function(text, object) {
             return;
         object ? console.info(text, object) : console.info(text);
     };
+
+
+const KomponentDebug_w = function(text, object) {
+        if (!KOMPONENTS_WARN)
+            return;
+        object ? console.warn(text, object) : console.info(text);
+    };
+
 
 
 const KomponentZookeeper = new _KomponentZookeeper();
