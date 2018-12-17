@@ -23,9 +23,6 @@ const App = () => {
                 return new MenuEntry(x)
               }),
               new IntroComponent(data.intro),
-              ...data.experiences.map((x) => {
-                 return new ExperienceEntry(x);
-              }),
           ];
         };
 
@@ -37,12 +34,25 @@ const App = () => {
             ];
         };
 
+        const skillsContext = (data) => () => {
+            return [
+                ...data.skills.professionnal.map(x => {
+                    return new IntroSkillEntry(x)
+                }),
+                ...data.skills.soft.map(x => {
+                    return new IntroSkillEntry(x)
+                }),
+            ];
+        };
+
 
         // Here it is how I fetch the lang for the user, see I spawn the
         const fetchData = (targetLang) => {
             KomponentZookeeper.spawnContext("default");
             KomponentZookeeper.clearContext("index");
             KomponentZookeeper.clearContext("xp");
+            KomponentZookeeper.clearContext("introskills");
+
             $.ajax({
                 url: "langs/" + targetLang + ".json",
                 type: "GET",
@@ -50,10 +60,12 @@ const App = () => {
                 success: function (data) {
                     KomponentZookeeper.registerContext("index", indexContext(data));
                     KomponentZookeeper.registerContext("xp", experiencesContext(data));
+                    KomponentZookeeper.registerContext("introskills", skillsContext(data));
                     setTimeout(() => {
                         $(document).ready(() => {
                             KomponentZookeeper.reshowContext("index");
                             KomponentZookeeper.reshowContext("xp");
+                            KomponentZookeeper.reshowContext("introskills");
                             KomponentZookeeper.clearContext("default");
                         });
                     }, 100);

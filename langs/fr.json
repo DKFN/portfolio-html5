@@ -82,6 +82,38 @@
             }
           ]
         }
+      },
+      {
+        "position": "Developpeur FullStack C#/Javascript et Typescript",
+        "description": "Developpeur C# (ASP .Net, Windows Forms), seul developpeur au sein d'une petite equipe de 5 personnes. NETCORP Etait une agence Web avec des clients importants (Bally, Stephane Bern, etc ...). Ceci fut ma premiere experience en gestion de Dette Technique et de realisation autonomes d'evolutions sur le CMS ainsi que le developpement de quelques outils internes",
+        "company": "NETCORP Solutions",
+        "durationText": "Juin 2015 - Mai 2016",
+        "showMore": {
+          "projects": [
+            {
+              "title": "IHM Devis",
+              "backdrop": "noBackdrop",
+              "description": "Creation d'une interface qui permet de consulter en temps reel les statistiques de consommation Live et les raports d'audience du CSA pour tous les operateurs francais.",
+              "techs": [
+                "C#",
+                "WindowsForms",
+                "SQLServer"
+              ]
+            },
+            {
+              "title": "MetroSystem",
+              "backdrop": "noBackdrop",
+              "description": "Creation de l'interface Nesletter3 permet d'envoyer aux abonnes des newsletters hebdomadaires personnalisees selon leurs offres. Elle contiens un language de templating, un algorithme de preselection de diffusions, une interface pour la selection manuelle ainsi qu'un connexion a l'API des serveurs de mailling pour une diffusion simple",
+              "techs": [
+                "C#",
+                "ASP .Net",
+                "SQL Server",
+                "JavaScript (commonJS)",
+                "HTML4"
+              ]
+            }
+          ]
+        }
       }
 	],
   "education": [
@@ -92,5 +124,54 @@
       "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
       "company": "EPITA (Ecode Pour l'Informatique et les Techniques Avancees"
     }
-  ]
+  ],
+  "skills": {
+    "professionnal": [
+      {
+        "name": "Scala",
+        "rating": 4,
+        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation +. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back"
+      },
+      {
+        "name": "GraphQL",
+        "rating": 4,
+        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement"
+      },
+      {
+        "name": "TypeScript",
+        "rating": 5,
+        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement"
+      },
+      {
+        "name": "JavaScript",
+        "rating": 5,
+        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)"
+      },
+      {
+        "name": "HTML5/CSS3",
+        "rating": 5,
+        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)"
+      }
+    ],
+    "soft": [
+      {
+        "name": "Documentation",
+        "rating": 3,
+        "description": "J'ai du a de nombreuses reprises entretenir et enrichir les documentations de certains projets simples ou complexes."
+      },
+      {
+        "name": "Formations",
+        "rating": 4,
+        "description": "Test"
+      },
+      {
+        "name": "Gestion de projet",
+        "rating": 3,
+        "description": "Au cours de ma mission chez Canal+, j'ai ete en charge des evolutions sur divers technologies frontend avec 2 internes sous ma responsabilite"
+      }
+    ]
+  },
+  "generalText": {
+    "seeMore": "En savoir plus"
+  }
 }

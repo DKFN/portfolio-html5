@@ -23,14 +23,7 @@ const IntroComponent = Komponent.extend({
           <p class="lead mb-5">${this.propsBag.currentPosition}</p>
             ${this.propsBag.body.join("")}
           <br /> <br />
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/valere-tetelin-514323b7/">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/DKFN">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
+          
         `;
     }
 });

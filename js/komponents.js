@@ -1,6 +1,7 @@
 let _Komponent_rKrefs = 0;
 const KOMPONENTS_DEBUG = true;
 const KOMPONENTS_WARN = true;
+const KOMPONENTS_ERR = true;
 
 const Komponent = Class.extend({
     propsBag: undefined, // Props of the component
@@ -58,16 +59,16 @@ const Komponent = Class.extend({
         $(document).ready(() => {
         const domNode = $("#" + this.diffIdentifier)[0];
             if (!domNode) {
-                console && console.error("Unable to find the Komponent@"+this.diffIdentifier);
-                console && console.error("This is probably a lifeCycle error, current component state : ", this);
-                console && console.error("Or maybe you did dontWrap but forgot diff ? ");
+                KomponentDebug_e("Unable to find the Komponent@"+this.diffIdentifier);
+                KomponentDebug_e("This is probably a lifeCycle error, current component state : ", this);
+                KomponentDebug_e("Or maybe you did dontWrap but forgot diff ? ");
                 return ;
             }
-            KomponentDebug_d(domNode);
+            // KomponentDebug_d(domNode);
             domNode.onclick = this.childRef.onClick;
             domNode.addEventListener("mouseleave", this.childRef.onMouseLeave);
             domNode.addEventListener("mouseenter", this.childRef.onMouseEnter);
-            KomponentDebug_d("Bindings : ", domNode);
+            // KomponentDebug_d("Bindings : ", domNode);
         });
 
     },
@@ -156,7 +157,11 @@ const Komponent = Class.extend({
         // Safeguard for the user state mutating before DOM rendered first, may trigger container div unavailable
         // at lease here it will be batched after all DOM is rendered.
         $(document).ready(() => {
-            $(this.__getSelector()).html(this.__wrap());
+            if (!this.renderMethod.dontWrap) {
+                $("#" + this.diffIdentifier).html(this.__wrap());
+            } else {
+                KomponentDebug_e("You seem to update state while not wrapping the div, this feature is kind of messy");
+            }
         });
     },
 
@@ -170,6 +175,7 @@ const Komponent = Class.extend({
      */
     __destroy: function() {
         this.childRef.onDestroyCallback && this.childRef.onDestroyCallback();
+        KomponentDebug_w("Komponent Lifecycle report : " + "#" + this.diffIdentifier, this);
         $("#" + this.diffIdentifier).remove();
 
         // On next render, component will be regenerated fully but will keep same props and state
@@ -189,7 +195,10 @@ const Komponent = Class.extend({
     setState: function(targetState, afterCallBack) {
         this.state = Object.assign(this.state, targetState);
         KomponentDebug_d("State update : ", this.state);
-        this.__render();
+
+        if (this.componentRendered)
+            this.__render();
+
         afterCallBack && afterCallBack();
     },
 
@@ -209,6 +218,16 @@ const Komponent = Class.extend({
             }, 10);
         }
     }
+});
+
+const FreeKomponent = Class.extend({
+    propsBag: {},
+
+    init: function(child, props) {
+        this.propsBag = props || this.propsBag;
+    },
+
+    render: undefined
 });
 
 const _KomponentZookeeper = Class.extend({
@@ -248,13 +267,13 @@ const _KomponentZookeeper = Class.extend({
      */
     spawnContext: function(name) {
         if (!this.poppers[name]) {
-            console.error("Komponent Zookeeper: Context not found : ", name);
+            KomponentDebug_e("Komponent Zookeeper: Context not found : ", name);
             return;
         }
 
         if (typeof this.poppers[name] !== "function") {
-            console.error("Komponent Zookeeper : Context is not a function: ", name);
-            console.error("Komponent Zookeeper : You should pass function like: functionName not functionName(): ", name);
+            KomponentDebug_e("Komponent Zookeeper : Context is not a function: ", name);
+            KomponentDebug_e("Komponent Zookeeper : You should pass function like: functionName not functionName(): ", name);
             return ;
         }
 
@@ -270,6 +289,7 @@ const _KomponentZookeeper = Class.extend({
      * @param name
      */
     reshowContext: function(name = "default") {
+        KomponentDebug_d("Komponents Zookeeper: Reshow : " + name);
         if (!this.onScreenComponents[name]){
             KomponentDebug_d("Komponents Zookeeper: Unable to find previous context, spawning new one");
             this.spawnContext(name);
@@ -286,8 +306,11 @@ const _KomponentZookeeper = Class.extend({
      * Hides a particular context to the user screen
      */
     clearContext(name = "default") {
-        if (!this.onScreenComponents[name])
+        KomponentDebug_w("Zookeeper : Clearing context : " + name);
+        if (!this.onScreenComponents[name]) {
+            console.error("Zookeeper : Asked for clearing of context : " + name + " but context is not on screen. NO-OP");
             return;
+        }
 
         KomponentDebug_d("Destroying : ", this.onScreenComponents[name]);
         this.onScreenComponents[name].forEach(x => {
@@ -313,18 +336,23 @@ const _KomponentZookeeper = Class.extend({
 });
 
 const KomponentDebug_d = function(text, object) {
-        if (!KOMPONENTS_DEBUG)
+        if (!KOMPONENTS_DEBUG || !console)
             return;
         object ? console.info(text, object) : console.info(text);
     };
 
 
 const KomponentDebug_w = function(text, object) {
-        if (!KOMPONENTS_WARN)
+        if (!KOMPONENTS_WARN || !console)
             return;
-        object ? console.warn(text, object) : console.info(text);
+        object ? console.warn(text, object) : console.warn(text);
     };
 
+const KomponentDebug_e = function(text, object) {
+        if (!KOMPONENTS_ERR || !console)
+            return;
+        object ? console.error(text, object) : console.error(text);
+    };
 
 
 const KomponentZookeeper = new _KomponentZookeeper();

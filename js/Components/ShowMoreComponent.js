@@ -17,8 +17,8 @@ const ShowMoreComponent = Komponent.extend({
 
     render: function() {
         return `
-            <a href="#${this.subContextKey}" rel="modal:open" class="resume-click-more text-md-right" id="${this.diffIdentifier}">
-               En savoir plus
+            <a href="#experience" rel="modal:open" class="resume-click-more text-md-right" id="${this.diffIdentifier}">
+                En savoir plus
            </a>`;
     },
 

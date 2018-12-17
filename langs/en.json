@@ -19,5 +19,42 @@
         "I was hired after some month in an Internship while working on an Engineering Degree at EPITA.<br />",
         "I mainly do Scala but I am from a Frontend world I am still working on javascript libraries for CanalPlus frontend developpers and some R&D frontend applications."
       ]
-    }
+    },
+  "skills": {
+    "seeMore": "See more",
+    "professionnal": [
+      {
+        "name": "Scala",
+        "rating": 4,
+        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation +. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back"
+      },
+      {
+        "name": "TypeScript",
+        "rating": 5,
+        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement"
+      },
+      {
+        "name": "JavaScript",
+        "rating": 5,
+        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)"
+      }
+    ],
+    "soft": [
+      {
+        "name": "Documentation",
+        "rating": 3,
+        "description": "J'ai du a de nombreuses reprises entretenir et enrichir les documentations de certains projets simples ou complexes."
+      },
+      {
+        "name": "Formations internes",
+        "rating": 4,
+        "description": "Test"
+      },
+      {
+        "name": "Gestion de projet",
+        "rating": 3,
+        "description": "Au cours de ma mission chez Canal+, j'ai ete en charge des evolutions sur divers technologies frontend avec 2 internes sous ma responsabilite"
+      }
+    ]
+  }
 }
