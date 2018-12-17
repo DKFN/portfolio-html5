@@ -26,13 +26,15 @@ const App = () => {
               ...data.experiences.map((x) => {
                  return new ExperienceEntry(x);
               }),
-              new ExperienceEntry({
-              position: "Scala/Typescript FullStack Developper",
-              company: "Canal+",
-              description: "test :)",
-              durationText: "September 2017 - Present"
-            }),
           ];
+        };
+
+        const experiencesContext = (data) => () => {
+            return [
+            ...data.experiences.map((x) => {
+                 return new ExperienceEntry(x);
+              })
+            ];
         };
 
 
@@ -40,15 +42,18 @@ const App = () => {
         const fetchData = (targetLang) => {
             KomponentZookeeper.spawnContext("default");
             KomponentZookeeper.clearContext("index");
+            KomponentZookeeper.clearContext("xp");
             $.ajax({
                 url: "langs/" + targetLang + ".json",
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
                     KomponentZookeeper.registerContext("index", indexContext(data));
+                    KomponentZookeeper.registerContext("xp", experiencesContext(data));
                     setTimeout(() => {
                         $(document).ready(() => {
                             KomponentZookeeper.reshowContext("index");
+                            KomponentZookeeper.reshowContext("xp");
                             KomponentZookeeper.clearContext("default");
                         });
                     }, 100);

@@ -2,7 +2,9 @@ const IntroComponent = Komponent.extend({
    renderMethod: {
        setHtml: true,
        targetContainer: "#about",
-       containerClassName: "my-auto"
+       containerClassName: "my-auto",
+       fadeSpawn: 2500,
+       fadePredelay: 500,
    },
 
     init: function(props) {

@@ -6,15 +6,29 @@ const ShowMoreComponent = Komponent.extend({
          targetContainer: ".resume-item > .resume-date"
     },
 
+    subContextKey: undefined,
+
     init: function(props, father)  {
         this._super(this, props, {});
         this.registerFather(father);
+        this.onClick = this.onClick.bind(this);
+        this.subContextKey = KomponentZookeeper.randomString();
     },
 
     render: function() {
         return `
-            <div class="resume-click-more text-md-right" id="${this.diffIdentifier}">
+            <a href="#${this.subContextKey}" rel="modal:open" class="resume-click-more text-md-right" id="${this.diffIdentifier}">
                En savoir plus
-           </div>`;
+           </a>`;
+    },
+
+    onClick: function() {
+        setTimeout(() => {
+            KomponentZookeeper.clearContext("xp");
+            KomponentZookeeper.spawnSubContext(this.subContextKey,
+                () => [ new Modal(this.subContextKey) ]
+            );
+        }, 100);
     }
+
 });

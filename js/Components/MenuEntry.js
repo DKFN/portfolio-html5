@@ -1,7 +1,9 @@
 const MenuEntry = Komponent.extend({
     renderMethod: {
         appendHtml: true,
-        targetContainer: ".navbar-nav"
+        targetContainer: ".navbar-nav",
+        fadeSpawn: 300,
+        fadePredelay: 200,
     },
 
     init: function(propsBag) {

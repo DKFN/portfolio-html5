@@ -2,6 +2,8 @@ const LangComponent = Komponent.extend({
    renderMethod: {
        setHtml: true,
        targetContainer: "#lang-container",
+       fadeSpawn: 1000,
+       fadePredelay: 1000,
    },
 
     init: function(props) {

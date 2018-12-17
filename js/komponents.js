@@ -16,6 +16,9 @@ const Komponent = Class.extend({
         customCallback: undefined,
         containerClassName: undefined,
         dontWrap: false,
+        fadePredelay: undefined,
+        fadeSpawn: undefined,
+        animateSpwan: undefined,
     },
 
     /**
@@ -40,6 +43,7 @@ const Komponent = Class.extend({
         this.__eventsBinder = this.__eventsBinder.bind(this);
         this.__batchDiffRender = this.__batchDiffRender.bind(this);
         this.__wrap = this.__wrap.bind(this);
+        this.__lateSpawner = this.__lateSpawner.bind(this);
 
         this.__render();
         this.childRef.onCreateCallback && this.childRef.onCreateCallback();
@@ -107,6 +111,8 @@ const Komponent = Class.extend({
             } : executor;
             executor(targetDom);
 
+            this.__lateSpawner();
+
             if (this.childRef.postRenderCallback)
                 this.childRef.postRenderCallback();
 
@@ -154,6 +160,10 @@ const Komponent = Class.extend({
         });
     },
 
+    lateUpdate: function(f) {
+        setTimeout(f, 20);
+    },
+
     /**
      * Will clear the node but keeps its props and state
      * @private
@@ -185,6 +195,19 @@ const Komponent = Class.extend({
 
     registerFather: function(father) {
         this.fatherKomponent = father;
+    },
+
+    __lateSpawner: function() {
+        if (this.renderMethod.fadeSpawn) {
+            $("#" + this.diffIdentifier).css('opacity', 0);
+            let _t = this;
+            setTimeout(() => {
+                $("#" + this.diffIdentifier).delay(_t.renderMethod.fadePredelay ? _t.renderMethod.fadePredelay : 0)
+                    .animate(_t.renderMethod.animateSpwan ? _t.renderMethod.animateSpwan : {
+                        opacity: 1,
+                    }, this.renderMethod.fadeSpawn);
+            }, 10);
+        }
     }
 });
 
@@ -192,6 +215,8 @@ const _KomponentZookeeper = Class.extend({
     instances: [],
     poppers: [], // Array of component function poppers and destroyers
     onScreenComponents: [],
+
+    shadowHashs: [],
 
     init: function() {
         this.spawnContext = this.spawnContext.bind(this);
@@ -207,26 +232,14 @@ const _KomponentZookeeper = Class.extend({
         this.poppers[name] = componentsFunction;
     },
 
-    /**
-     * Allows nesting of components, shows a components ands binds it to a context (and will be destroyed and updated as is)
-     * @param name
-     * @param component
-     */
-    spawnToContext: function(name, component) {
-        // FIXME : This is broken
-        console && console.error("Komponent Zookeeper : Sub context api is broken, you have to boilerplate context creation in container component");
-        if (!this.onScreenComponents[name]) {
-            KomponentDebug_w("Komponent Zookeeper: Context not on screen");
-            KomponentDebug_w("Komponent Zookeeper: Wrapping component rendering. @" + name, component);
-            this.poppers[name] = () => [
-                this.poppers[name](),
-                component()
-            ];
-            return ;
-        }
+    spawnSubContext: function(key, popper) {
+        const k = "-subs" + key;
+        this.poppers[k] = popper;
+        this.onScreenComponents[k] = popper();
+    },
 
-        this.onScreenComponents[name][this.onScreenComponents[name].length || 0] = component;
-        component.__render();
+    clearSubContext: function(key) {
+        this.clearContext("-subs" + key);
     },
 
     /**
@@ -275,10 +288,27 @@ const _KomponentZookeeper = Class.extend({
     clearContext(name = "default") {
         if (!this.onScreenComponents[name])
             return;
+
+        KomponentDebug_d("Destroying : ", this.onScreenComponents[name]);
         this.onScreenComponents[name].forEach(x => {
             KomponentDebug_d("Destroying : ", x);
             x.__destroy();
         });
+    },
+
+    randomString: function (len=16, an="A") {
+        an = an&&an.toLowerCase();
+        let str="", i=0, min=an==="a"?10:0, max=an==="n"?10:62;
+        for(;i++<len;){
+            let r = Math.random()*(max-min)+min <<0;
+            str += String.fromCharCode(r+=r>9?r<36?55:61:48);
+        }
+
+        if (this.shadowHashs[str])
+            return this.randomString(len, an);
+
+        this.shadowHashs[str] = true;
+        return str;
     }
 });
 

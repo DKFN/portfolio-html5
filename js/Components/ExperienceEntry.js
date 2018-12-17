@@ -1,7 +1,8 @@
 const ExperienceEntry = Komponent.extend({
     renderMethod: {
          appendHtml: true,
-         targetContainer: "#experience"
+         targetContainer: "#experience",
+         fadeSpawn: 1200,
     },
 
     subContextKey: undefined,
@@ -33,22 +34,10 @@ const ExperienceEntry = Komponent.extend({
         `;
     },
 
-    /*
-    // TODO : This is a better API I guess
-    onCreateCallback() {
-        KomponentZookeeper.spawnToContext("index", () => new ShowMoreComponent(this.propsBag.showMore, this));
-    }*/
-
-    /*
-        This method works but theres no need to create a sub context key if your sub component life is the same as your component life
-    */
     postRenderCallback: function() {
-        KomponentZookeeper.registerContext(this.subContextKey, () => {
-               return [
-                   new ShowMoreComponent(this.propsBag.showMore, this),
-            ];
-        });
-        KomponentZookeeper.spawnContext(this.subContextKey);
+        KomponentZookeeper.spawnSubContext(this.subContextKey,
+            () => [ new ShowMoreComponent(this.propsBag.showMore, this) ]
+        );
     },
 
     onDestroyCallback: function() {
