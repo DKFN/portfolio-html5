@@ -1,4 +1,6 @@
-const MenuEntry = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const MenuEntry = Komponent.extend({
     renderMethod: {
         appendHtml: true,
         targetContainer: ".navbar-nav",

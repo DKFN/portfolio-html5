@@ -1,4 +1,4 @@
-const ModalClose = Komponent.extend({
+export const ModalClose = Komponent.extend({
     renderMethod: {
         setHtml: true,
         targetContainer: ".modal-close",

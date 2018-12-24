@@ -1,4 +1,6 @@
-const LoaderComponent = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const LoaderComponent = Komponent.extend({
     renderMethod: {
         setHtml: true,
         targetContainer: undefined,

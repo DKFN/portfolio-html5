@@ -1,4 +1,7 @@
-const Modal = Komponent.extend({
+import {KomponentZookeeper} from "../komponents";
+import {ModalClose} from "./ModalClose";
+
+export const Modal = Komponent.extend({
     renderMethod: {
         setHtml: true,
         targetContainer: "#experience",

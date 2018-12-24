@@ -1,4 +1,12 @@
-const App = () => {
+import {KomponentZookeeper} from "./komponents";
+import {LangComponent} from "./Components/LangComponent";
+import {IntroComponent} from "./Components/IntroComponent"
+import {LoaderComponent} from "./Components/LoaderComponent";
+import {IntroSkillEntry} from "./Components/IntroSkillEntry";
+import {MenuEntry} from "./Components/MenuEntry";
+import {ExperienceEntry} from "./Components/ExperienceEntry";
+
+export const Index = () => {
         const langContext = () => {
           return [
               new LangComponent({fetchData: fetchData}),
@@ -36,12 +44,9 @@ const App = () => {
 
         const skillsContext = (data) => () => {
             return [
-                ...data.skills.professionnal.map(x => {
+                ...data.skills.map(x => {
                     return new IntroSkillEntry(x)
-                }),
-                ...data.skills.soft.map(x => {
-                    return new IntroSkillEntry(x)
-                }),
+                })
             ];
         };
 
@@ -54,7 +59,7 @@ const App = () => {
             KomponentZookeeper.clearContext("introskills");
 
             $.ajax({
-                url: "langs/" + targetLang + ".json",
+                url: "static/langs/" + targetLang + ".json",
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -83,4 +88,4 @@ const App = () => {
         fetchData("fr");
 };
 
-App();
+Index();

@@ -1,4 +1,6 @@
-const ShowMoreComponent = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const ShowMoreComponent = Komponent.extend({
     renderMethod: {
          appendHtml: true,
          dontWrap: true,

@@ -1,4 +1,6 @@
-const IntroSkillComplete  = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const IntroSkillComplete  = Komponent.extend({
     renderMethod: {
         setHtml: true,
         targetContainer: "#introskills-container",
@@ -20,7 +22,7 @@ const IntroSkillComplete  = Komponent.extend({
         return `
             <div class="introskill-extended-container">
                 <h3>${this.propsBag.name}</h3><hr />
-                <span class="introskill-seemore">${this.propsBag.description}</span>
+                <span class="introskill-description">${this.propsBag.description}</span>
                 <br />
                 <br />
                 <i class="su-sml">- Cliquez pour revenir -</i>

@@ -1,6 +1,8 @@
-const StarFreeComponent = FreeKomponent.extend({
+import {FreeKomponent} from "../komponents";
 
-    init(props) {
+export const StarFreeComponent = FreeKomponent.extend({
+
+    init: function(props) {
         this._super(this, props);
         this.getRating = this.getRating.bind(this);
     },
@@ -12,6 +14,7 @@ const StarFreeComponent = FreeKomponent.extend({
 
     getRating: function () {
         let arr = [];
+        let i = 0;
         for (i = 0; i < this.propsBag.rating; ++i)
             arr.push(`<i class="fa fa-star" aria-hidden="true"></i>`);
         for (; i < 5; ++i)

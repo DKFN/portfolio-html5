@@ -1,4 +1,6 @@
-const LangComponent = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const LangComponent = Komponent.extend({
    renderMethod: {
        setHtml: true,
        targetContainer: "#lang-container",
@@ -7,6 +9,7 @@ const LangComponent = Komponent.extend({
    },
 
     init: function(props) {
+       console.log(this);
         this._super(this, props, {currentLang: "fr"});
         this.onClick = this.onClick.bind(this);
     },

@@ -1,4 +1,6 @@
-const IntroComponent = Komponent.extend({
+import {Komponent} from "../komponents";
+
+export const IntroComponent = Komponent.extend({
    renderMethod: {
        setHtml: true,
        targetContainer: "#about",

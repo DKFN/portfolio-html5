@@ -9,14 +9,14 @@
 	],
     "intro": {
       "title": "Developpeur <span class='text-primary'>Scala</span> && Typescript",
-      "currentPosition": "Chez <img src='img/cplus.gif' height='16px'/> depuis <span class='text-primary'>2 ans</span>.",
+      "currentPosition": "Chez <img src='static/img/cplus.gif' height='16px'/> depuis <span class='text-primary'>2 ans</span>.",
       "body": [
-        "I am working on a GraphQL gateway and on the main REST API behind all our frontend applications in a team of <span class'text-primary'>20 developpers</span><br />",
-        "Working with Scalable Reactive systems on a daily basis, with the help of <span class='text-primary'>Play!</span> Framework, <span class='text-primary'>Akka</span>, <span class='text-primary'>Kafka</span>, <span class='text-primary'>Cassandra</span> and <span class='text-primary'>Redis</span>.<br />",
-        "Convinced by <span class='text-primary'>Agile</span> developpement cycle and <span class='text-primary'>TDD</span> practices. I'm used to working with AWS, Docker and Immutable State infrastructure (Salt Stack and recently, Kubernetes) <br />",
-        "I used to be a Frontend consultant working on many Canal+'s technical backoffices.<br />",
-        "I was hired after some month in an Internship while working on an Engineering Degree at EPITA.<br />",
-        "I mainly do Scala but I am from a Frontend world I am still working on javascript libraries for CanalPlus frontend developpers and some R&D frontend applications."
+        "Je travaille actuellement sur une API GraphQL ainsi que sur l'API REST principale qui est derriere tous nos clients frontaux dans une equipe de <span class='text-primary'>20</span>&nbsp;developpeurs.<br />",
+        "Tous les jours, je travaille sur des systemes Reactifs et Evolutions avec l'aide de <span class='text-primary'>Play!</span> Framework, <span class='text-primary'>Akka</span>, <span class='text-primary'>Kafka</span>, <span class='text-primary'>Cassandra</span> et <span class='text-primary'>Redis</span>.<br />",
+        "Convaincu par <span class='text-primary'>Agile</span> et les pratiques <span class='text-primary'>TDD</span>. J'ai l'habitude de travailler avec AWS, Docker et des infrastructures a etats immutables (Salt Stack et recemment Kubernetes)<br />",
+        "Avant d'etre interne, j'etais un consultat sur differents BackOffices de Canal+.<br />",
+        "J'ai ensuite ete engage en Apprentissage tout en preparent un Master en ingenierie informatique a <span class='text-primary'>EPITA</span>.<br />",
+        "Je fais principalement du Scala mais venant du FrontEnd je travaille toujours sur des bibliotheques JavaScript pour les clients CanalPlus et de la Recherche et Developpement dans les nouvelles technologies front."
       ]
     },
 	"experiences": [
@@ -125,35 +125,49 @@
       "company": "EPITA (Ecode Pour l'Informatique et les Techniques Avancees"
     }
   ],
-  "skills": {
-    "professionnal": [
+  "skills": [
       {
         "name": "Scala",
         "rating": 4,
-        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation +. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back"
+        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation fonctionnelle. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back. J'ai encore des lacunes sur certaines parties du language (Macros, Bonnes pratiques avances, sucres syntaxiques)",
+        "category": "Profesionnal"
       },
       {
         "name": "GraphQL",
         "rating": 4,
-        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement"
+        "description": "Depuis 2ans, sur une application frontend interne a l'equipe j'utilise GraphQL cote client. Recemment, depuis 1ans j'interviens sur notre service GraphQL ecrit en Scala avec l'aide de Sangria. J'ai egalement donne des formations pour une association de l'EPITA sur le developpement frontend concernant GraphQL",
+        "category": "Profesionnal"
       },
       {
         "name": "TypeScript",
         "rating": 5,
-        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement"
+        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement",
+        "category": "Profesionnal"
       },
       {
         "name": "JavaScript",
         "rating": 5,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)"
+        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets anciens, de mieux comprendre les technologies et compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "category": "Profesionnal"
       },
       {
         "name": "HTML5/CSS3",
         "rating": 5,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)"
-      }
-    ],
-    "soft": [
+        "description": "L'HTML me suit depuis mes debuts en programmation. De l'HTML4/CSS2 j'ai connu la transition vers l'HTML5 et le CSS3 et les nombreuses ameliorations apportees par ces iterations.",
+        "category": "Profesionnal"
+      },
+      {
+        "name": "ElasticSearch",
+        "rating": 4,
+        "description": "ElasticSearch est le moteur d'indexation de choix des applicatifs Canal+. Outre la definition de templates et l'indexation de donnees, j'ai ete anmmene a maintenir des plugins ElasticSearch ecrits en Java.",
+        "category": "Profesionnal"
+      },
+      {
+        "name": "Cassandra",
+        "rating": 4,
+        "description": "Cassandra est le datastore au centre de nombreux applicatifs au sein de CanalPlus, noSql et extremmement performant, j'ai acquis une bonne experience dans son utilisation dans des applications Scala. Je connais sur le principe ses systemes de replication mais je n'ai jamais administre de cluster cassandra.",
+        "category": "Profesionnal"
+      },
       {
         "name": "Documentation",
         "rating": 3,
@@ -165,12 +179,17 @@
         "description": "Test"
       },
       {
-        "name": "Gestion de projet",
-        "rating": 3,
-        "description": "Au cours de ma mission chez Canal+, j'ai ete en charge des evolutions sur divers technologies frontend avec 2 internes sous ma responsabilite"
+        "name": "Scrum",
+        "rating": 4,
+        "description": "Depuis mon arrivee chez Canal+, je suis confronte a un environnement de travail Agile Scrum au quotidien, epaule par mes cours sur le sujet j'ai pu m'integrer dans cet environnement qui me plait fortement."
+      },
+      {
+        "name": "Rust",
+        "rating": 2,
+        "description": "L'EPITA m'as introduit a la programmation bas niveau via le C et le C++ j'ai ete attire par le Rust car il arrive a melanger la performance de ces language, les abstractions des languages haut niveau, tout priorisant une approche de programmation fonctionnelle.",
+        "category": "Geekly Learning"
       }
-    ]
-  },
+  ],
   "generalText": {
     "seeMore": "En savoir plus"
   }

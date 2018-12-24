@@ -1,9 +1,11 @@
+import Type from "lighter-type";
+
 let _Komponent_rKrefs = 0;
 const KOMPONENTS_DEBUG = true;
 const KOMPONENTS_WARN = true;
 const KOMPONENTS_ERR = true;
 
-const Komponent = Class.extend({
+export const Komponent = Type.extend({
     propsBag: undefined, // Props of the component
     state: undefined, // State of the component
     childRef: undefined, // Ref to the child, filled when builded
@@ -28,7 +30,7 @@ const Komponent = Class.extend({
      * @param propsBag
      * @param initState
      */
-    init: function(childRef, propsBag = undefined, initState = undefined) {
+    _init: function(childRef, propsBag = undefined, initState = undefined) {
         _Komponent_rKrefs++;
         const mRef = _Komponent_rKrefs;
         KomponentDebug_d("Komponent : Popping component #" + mRef);
@@ -49,6 +51,11 @@ const Komponent = Class.extend({
         this.__render();
         this.childRef.onCreateCallback && this.childRef.onCreateCallback();
         KomponentDebug_d("Komponent : Popped #" + mRef + " (Differ full ID : " + this.diffIdentifier + " )");
+    },
+
+    /* Temporary adapters for previous API */
+    _super: function (c, p, i) {
+            this._init(c, p, i);
     },
 
     /**
@@ -220,17 +227,23 @@ const Komponent = Class.extend({
     }
 });
 
-const FreeKomponent = Class.extend({
+export const FreeKomponent = Type.extend({
     propsBag: {},
 
-    init: function(child, props) {
+    _init: function(child, props) {
+        console.log("In child!");
         this.propsBag = props || this.propsBag;
+        this._super = this._super.bind(this);
+    },
+
+    _super: function(c,p) {
+        this._init(c,p);
     },
 
     render: undefined
 });
 
-const _KomponentZookeeper = Class.extend({
+const _KomponentZookeeper = Type.extend({
     instances: [],
     poppers: [], // Array of component function poppers and destroyers
     onScreenComponents: [],
@@ -355,5 +368,5 @@ const KomponentDebug_e = function(text, object) {
     };
 
 
-const KomponentZookeeper = new _KomponentZookeeper();
+export const KomponentZookeeper = new _KomponentZookeeper();
 window.KomponentZookeeper = KomponentZookeeper;

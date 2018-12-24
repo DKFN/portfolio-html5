@@ -1,4 +1,8 @@
-const IntroSkillEntry = Komponent.extend({
+import {Komponent} from "../komponents";
+import {IntroSkillComplete} from "./IntroSkillComplete";
+import {StarFreeComponent} from "./StarFreeKomponent";
+
+export const IntroSkillEntry = Komponent.extend({
     renderMethod: {
         appendHtml: true,
         targetContainer: "#introskills-container",
@@ -18,10 +22,15 @@ const IntroSkillEntry = Komponent.extend({
     render: function () {
         return `
             <div class="introskill-container">
-                <h3>${this.propsBag.name}</h3><hr />
+                <h4>${this.propsBag.name}</h4><hr />
                 ${ new StarFreeComponent(this.propsBag).render() }
-                <div class="introskill-more -pull-right">
-                    <i class="fa fa-plus-circle"></i>
+                <div class="su-flex introskill-footer" style="justify-content: right">
+                    <div class="introskill-category">
+                        ${this.propsBag.category || "None"}
+                    </div>
+                    <div class="introskill-more" style="text-align: right">
+                        <i class="fa fa-plus-circle"></i>
+                    </div>
                 </div>
             </div>
         `;

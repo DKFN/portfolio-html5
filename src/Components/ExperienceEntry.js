@@ -1,4 +1,7 @@
-const ExperienceEntry = Komponent.extend({
+import {ShowMoreComponent} from "./ShowMoreComponent";
+import {Komponent} from "../komponents";
+
+export const ExperienceEntry = Komponent.extend({
     renderMethod: {
          appendHtml: true,
          targetContainer: "#experience",
@@ -8,6 +11,7 @@ const ExperienceEntry = Komponent.extend({
     subContextKey: undefined,
 
     init: function(props) {
+        console.log(this);
         this._super(this, props, {});
         //this.onCreateCallback = this.onCreateCallback.bind(this);
         this.postRenderCallback = this.postRenderCallback.bind(this);
