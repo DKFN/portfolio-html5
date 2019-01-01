@@ -1,4 +1,5 @@
 import {Komponent} from "../komponents";
+import {Modal} from "./Modal";
 
 export const ShowMoreComponent = Komponent.extend({
     renderMethod: {
@@ -28,7 +29,7 @@ export const ShowMoreComponent = Komponent.extend({
         setTimeout(() => {
             KomponentZookeeper.clearContext("xp");
             KomponentZookeeper.spawnSubContext(this.subContextKey,
-                () => [ new Modal(this.subContextKey) ]
+                () => [ new Modal({prev: this.propsBag, k: this.subContextKey}) ]
             );
         }, 100);
     }

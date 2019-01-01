@@ -40,7 +40,7 @@ export const ExperienceEntry = Komponent.extend({
 
     postRenderCallback: function() {
         KomponentZookeeper.spawnSubContext(this.subContextKey,
-            () => [ new ShowMoreComponent(this.propsBag.showMore, this) ]
+            () => [ new ShowMoreComponent(this.propsBag, this) ]
         );
     },
 

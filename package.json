@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
   },
   "license": "MIT",
   "author": "Start Bootstrap",

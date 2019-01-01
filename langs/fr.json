@@ -26,7 +26,7 @@
         "durationText": "Septembre 2017 - Aujourd'hui",
         "company": "Canal+",
         "companyImg": "<img src='img/cplus.gif' height='16px'/>",
-        "ShowMore": {
+        "showMore": {
           "projects": [
             {
               "title": "HAPI",
@@ -48,7 +48,7 @@
       },
       {
         "position": "Developpeur FullStack PHP/Javascript et Typescript",
-        "description": "Test",
+        "description": "Au sein d'OMNILOG j'ai d'abord ete developpeur sur un projet au forfait pendant 6mois avant de passer en regie chez Canal+ ou j'y ait termine des taches sur le projet au forfait avant de passer a d'autres perimetres.",
         "company": "Omnilog",
         "durationText": "Septembre 2016 - Aout 2017",
         "showMore": {
@@ -116,15 +116,6 @@
         }
       }
 	],
-  "education": [
-    {
-      "onClick": "Here HTML",
-      "position": "Master d'Expertise en Ingeniere Informatique",
-      "durationText": "Septembre 2017 - Aujourd'hui",
-      "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
-      "company": "EPITA (Ecode Pour l'Informatique et les Techniques Avancees"
-    }
-  ],
   "skills": [
       {
         "name": "Scala",
@@ -189,6 +180,20 @@
         "description": "L'EPITA m'as introduit a la programmation bas niveau via le C et le C++ j'ai ete attire par le Rust car il arrive a melanger la performance de ces language, les abstractions des languages haut niveau, tout priorisant une approche de programmation fonctionnelle.",
         "category": "Geekly Learning"
       }
+  ],
+  "education": [
+    {
+      "name": "EPITA (Ecole pour l'Informatique et les Techniques Appliquees",
+      "duration": "Septembre 2017 - Aujourd'hui",
+      "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
+      "diploma": "Master d'expertise en ingenierie informatique"
+    },
+    {
+      "name": "Lycee Maximillien Sorre",
+      "duration": "Septembre 2014 - Juillet 2016",
+      "description": "Test",
+      "diploma": "BTS Service Informatique aux Organisations"
+    }
   ],
   "generalText": {
     "seeMore": "En savoir plus"

@@ -7,7 +7,7 @@
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
-  color: #868e96;
+  color: #CDC8C0;
  background-color: black;
   transition-timing-function: ease-out;
 }
@@ -28,7 +28,7 @@ h6 {
   font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
   text-transform: uppercase;
-  color: #343a40;
+  color: #CDC8C0;
 }
 
 h1 {
@@ -161,19 +161,19 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: red !important;
+  background-color: #A32520 !important;
 }
 
 .text-primary {
-  color: red !important;
+  color: #A32520 !important;
 }
 
 a {
-  color: red;
+  color: #A32520;
 }
 
 a:hover, a:focus, a:active {
-  color: darkred;
+  color: #A32520;
 }
 
 .resume-date {
@@ -184,7 +184,7 @@ a:hover, a:focus, a:active {
 }
 
 .resume-click-more {
-  border: 1px solid red;
+  border: 1px solid #A32520;
     border-radius: 5px;
     font-size: 18px;
   max-width: 150px;
@@ -193,7 +193,7 @@ a:hover, a:focus, a:active {
 }
 
 .resume-click-more:hover {
-  background-color: red;
+  background-color: #A32520;
   transition-duration: 150ms;
   color: black;
 }
@@ -209,7 +209,7 @@ a:hover, a:focus, a:active {
 /* Modal Header */
 .modal-header {
   padding: 2px 16px;
-  background-color: red;
+  background-color: #A32520;
   color: white;
 }
 
@@ -219,7 +219,7 @@ a:hover, a:focus, a:active {
 /* Modal Footer */
 .modal-footer {
   padding: 2px 16px;
-  background-color: red;
+  background-color: #A32520;
   color: white;
 }
 

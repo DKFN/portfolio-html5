@@ -21,7 +21,7 @@
 }
 
 .splasher-header {
-    background-color: red;
+    background-color: #A32520;
 }
 
 .splasher-title {
@@ -89,7 +89,7 @@
 
 .introskill-container {
     font-size: 16px;
-    border: 2px solid red;
+    border: 2px solid #A32520;
     border-radius: 4px;
     padding: 2em;
     margin: 2em;
@@ -99,7 +99,7 @@
 }
 
 .introskill-extended-container {
-    border: 2px solid red;
+    border: 2px solid #A32520;
     border-radius: 4px;
     padding: 2em;
     margin: 2em;

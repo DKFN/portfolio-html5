@@ -2,39 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5cf404-e4c1-49da-a051-95325427fa03" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ExperienceProject.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/ExperienceEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceEntry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/IntroComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/IntroComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/IntroSkillComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/IntroSkillComplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/IntroSkillEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/IntroSkillEntry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/LangComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LangComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/LoaderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LoaderComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/MenuEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MenuEntry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/ModalClose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ModalClose.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/ShowMoreComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ShowMoreComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Components/StarFreeKomponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/StarFreeKomponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/inherithance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/komponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/komponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/resume.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resume.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/resume.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resume.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/langs/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/langs/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/resume.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/resume.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/langs/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/langs/fr.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/fontawesome-free/sprites/brands.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/fontawesome-free/sprites/brands.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/vendors/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ExperienceEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceEntry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ModalClose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ModalClose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ShowMoreComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ShowMoreComponent.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,18 +25,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="IntroSkillComplete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/IntroSkillComplete.js">
+      <file leaf-file-name="Modal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171" />
+            <state relative-caret-position="725">
+              <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-1276">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -67,14 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExperienceEntry.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/ExperienceEntry.js">
+      <file leaf-file-name="ExperienceProject.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/ExperienceProject.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="754">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -93,29 +73,38 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="fr.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/langs/fr.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="resume.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/resume.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="4411">
+              <caret line="186" column="20" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="komponents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/komponents.js">
+      <file leaf-file-name="modal.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/modal.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="234" column="9" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
+            <state relative-caret-position="-2465">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fr.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/langs/fr.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="183" column="14" selection-start-line="183" selection-start-column="14" selection-end-line="183" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -125,15 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
               <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -166,20 +146,15 @@
         <option value="$PROJECT_DIR$/js/Components/ModalClose.js" />
         <option value="$PROJECT_DIR$/js/Components/Modal.js" />
         <option value="$PROJECT_DIR$/js/Components/IntroComponent.js" />
-        <option value="$PROJECT_DIR$/css/resume.css" />
         <option value="$PROJECT_DIR$/js/Components/ShowMoreComponent.js" />
         <option value="$PROJECT_DIR$/js/Components/StarFreeKomponent.js" />
         <option value="$PROJECT_DIR$/js/Components/IntroSkillComplete.js" />
         <option value="$PROJECT_DIR$/js/Components/App.js" />
         <option value="$PROJECT_DIR$/langs/en.json" />
-        <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/js/Components/IntroSkillEntry.js" />
         <option value="$PROJECT_DIR$/js/App.js" />
         <option value="$PROJECT_DIR$/js/komponents.js" />
         <option value="$PROJECT_DIR$/js/inherithance.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/Components/Modal.js" />
-        <option value="$PROJECT_DIR$/src/Components/ModalClose.js" />
         <option value="$PROJECT_DIR$/src/Components/IntroComponent.js" />
         <option value="$PROJECT_DIR$/src/Components/IntroSkillComplete.js" />
         <option value="$PROJECT_DIR$/src/Components/LoaderComponent.js" />
@@ -191,12 +166,18 @@
         <option value="$PROJECT_DIR$/src/Components/LangComponent.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/Components/ExperienceEntry.js" />
-        <option value="$PROJECT_DIR$/src/Components/ShowMoreComponent.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/Components/IntroSkillEntry.js" />
         <option value="$PROJECT_DIR$/src/komponents.js" />
         <option value="$PROJECT_DIR$/src/Components/StarFreeKomponent.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/Components/ModalClose.js" />
+        <option value="$PROJECT_DIR$/src/Components/ExperienceEntry.js" />
+        <option value="$PROJECT_DIR$/src/Components/ShowMoreComponent.js" />
+        <option value="$PROJECT_DIR$/src/Components/ExperienceProject.js" />
+        <option value="$PROJECT_DIR$/src/Components/Modal.js" />
+        <option value="$PROJECT_DIR$/css/resume.css" />
+        <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/langs/fr.json" />
       </list>
     </option>
@@ -349,24 +330,26 @@
       <workItem from="1545132859984" duration="4139000" />
       <workItem from="1545583473750" duration="8688000" />
       <workItem from="1545657430141" duration="2067000" />
+      <workItem from="1546372865159" duration="2907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100814000" />
+    <option name="totallyTimeSpent" value="103721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="51" width="3706" height="2109" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118996225" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118996225" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3299025" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3299025" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,13 +368,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -526,31 +502,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/modal.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ModalClose.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -566,13 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1511">
           <caret line="10368" column="18" selection-start-line="10368" selection-start-column="18" selection-end-line="10368" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -611,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ShowMoreComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/IntroSkillEntry.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
@@ -626,24 +567,46 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/IntroSkillComplete.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171" />
+        <state relative-caret-position="493">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/komponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="6786">
+          <caret line="234" column="9" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ExperienceEntry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="699">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/src/Components/ShowMoreComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="754">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalClose.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -654,29 +617,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/komponents.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="234" column="9" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
+        <state relative-caret-position="464">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/resume.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ExperienceEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/Components/IntroComponent.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/StarFreeKomponent.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -685,13 +634,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/IntroComponent.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/Components/ExperienceProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/resume.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4411">
+          <caret line="186" column="20" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2465">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/langs/fr.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        <state relative-caret-position="580">
+          <caret line="183" column="14" selection-start-line="183" selection-start-column="14" selection-end-line="183" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1276">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

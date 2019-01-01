@@ -1,5 +1,6 @@
-import {KomponentZookeeper} from "../komponents";
+import {Komponent, KomponentZookeeper} from "../komponents";
 import {ModalClose} from "./ModalClose";
+import {ExperienceProject} from "./ExperienceProject";
 
 export const Modal = Komponent.extend({
     renderMethod: {
@@ -9,33 +10,33 @@ export const Modal = Komponent.extend({
 
     subKey: undefined,
 
-    init: function(subKey) {
-        this._super(this);
-        this.subKey = subKey;
+    init: function(props) {
+        this._super(this, props);
+        this.subKey = props.k;
     },
 
     render: function() {
-        let _t = this;
+        const txt = this.propsBag.prev;
+        const projects = txt.showMore.projects
+            ? txt.showMore.projects.map(x => new ExperienceProject(x).render()).join("")
+            : "";
+
+        console.log(this.propsBag);
         return `
             <div class="splash-container">
                 <div class="splasher">
                     <div class="splasher-header">
                     <div class="splasher-title">
                         <h1>
-                            Test
+                            ${txt.company}
                             <span class="modal-close"></span>
                         </h1>
                         <hr />
-                        <h4>Position reminder around here</h4>
+                        <h4>${txt.position}</h4>
                     </div>
                     </div>
-                    <h2>HAPI</h2>
-                    <div class="splasher-content">
-                    <p>This is the test of the HAPI content you kow</p>
-                        <div class="splasher-img-container">
-                            <img src="https://docs.microsoft.com/fr-fr/azure/cloud-shell/media/persisting-shell-storage/mount-h.png"/>
-                        </div>
-                    </div>
+                    <hr style="height: 30px" />
+                    ${ projects }
                 </div>
             </div>
         `;

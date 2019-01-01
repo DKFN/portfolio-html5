@@ -1,3 +1,5 @@
+import {Komponent, KomponentZookeeper} from "../komponents";
+
 export const ModalClose = Komponent.extend({
     renderMethod: {
         setHtml: true,
