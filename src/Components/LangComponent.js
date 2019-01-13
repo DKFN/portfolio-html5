@@ -9,7 +9,6 @@ export const LangComponent = Komponent.extend({
    },
 
     init: function(props) {
-       console.log(this);
         this._super(this, props, {currentLang: "fr"});
         this.onClick = this.onClick.bind(this);
     },

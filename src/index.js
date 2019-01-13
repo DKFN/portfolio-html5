@@ -5,6 +5,8 @@ import {LoaderComponent} from "./Components/LoaderComponent";
 import {IntroSkillEntry} from "./Components/IntroSkillEntry";
 import {MenuEntry} from "./Components/MenuEntry";
 import {ExperienceEntry} from "./Components/ExperienceEntry";
+import {EducationEntry} from "./Components/EducationEntry";
+import {ProjectEntry} from "./Components/ProjectEntry";
 
 export const Index = () => {
         const langContext = () => {
@@ -42,6 +44,22 @@ export const Index = () => {
             ];
         };
 
+        const educationContext = (data) => () => {
+            return [
+                ...data.education.map((x) => {
+                    return new EducationEntry(x);
+                })
+            ];
+        };
+
+        const projectContext = (data) => () => {
+            return [
+                ...data.projects.map((X) => {
+                    return new ProjectEntry(X);
+                })
+            ];
+        };
+
         const skillsContext = (data) => () => {
             return [
                 ...data.skills.map(x => {
@@ -55,22 +73,28 @@ export const Index = () => {
         const fetchData = (targetLang) => {
             KomponentZookeeper.spawnContext("default");
             KomponentZookeeper.clearContext("index");
-            KomponentZookeeper.clearContext("xp");
+            KomponentZookeeper.clearContext("edu");
             KomponentZookeeper.clearContext("introskills");
+            KomponentZookeeper.clearContext("projects");
 
             $.ajax({
                 url: "static/langs/" + targetLang + ".json",
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
+                    KomponentZookeeper.destroyContext("xp");
                     KomponentZookeeper.registerContext("index", indexContext(data));
                     KomponentZookeeper.registerContext("xp", experiencesContext(data));
+                    KomponentZookeeper.registerContext("edu", educationContext(data));
                     KomponentZookeeper.registerContext("introskills", skillsContext(data));
+                    KomponentZookeeper.registerContext("projects", projectContext(data));
                     setTimeout(() => {
                         $(document).ready(() => {
                             KomponentZookeeper.reshowContext("index");
                             KomponentZookeeper.reshowContext("xp");
+                            KomponentZookeeper.reshowContext("edu");
                             KomponentZookeeper.reshowContext("introskills");
+                            KomponentZookeeper.reshowContext("projects");
                             KomponentZookeeper.clearContext("default");
                         });
                     }, 100);

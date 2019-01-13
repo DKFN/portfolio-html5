@@ -1,10 +1,9 @@
-import {ShowMoreComponent} from "./ShowMoreComponent";
 import {Komponent} from "../komponents";
 
-export const ExperienceEntry = Komponent.extend({
+export const EducationEntry = Komponent.extend({
     renderMethod: {
          appendHtml: true,
-         targetContainer: "#experience",
+         targetContainer: "#education",
          fadeSpawn: 1200,
     },
 
@@ -14,7 +13,6 @@ export const ExperienceEntry = Komponent.extend({
         console.log(this);
         this._super(this, props, {});
         //this.onCreateCallback = this.onCreateCallback.bind(this);
-        this.postRenderCallback = this.postRenderCallback.bind(this);
         this.subContextKey = "_#index" + this.diffIdentifier;
     },
 
@@ -22,28 +20,18 @@ export const ExperienceEntry = Komponent.extend({
         return `
         <div class="resume-item d-flex flex-column flex-md-row mb-5" id="${this.diffIdentifier}">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">${this.propsBag.position}</h3>
+              <h3 class="mb-0">${this.propsBag.diploma}</h3>
               <div class="subheading mb-3">
-                ${this.propsBag.companyImg ? this.propsBag.companyImg : this.propsBag.company}
+                ${this.propsBag.name }
                 </div>
               <p>
                 ${this.propsBag.description}
               </p>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">${this.propsBag.durationText}</span>
+              <span class="text-primary">${this.propsBag.duration}</span>
             </div>
         </div>
         `;
     },
-
-    postRenderCallback: function() {
-        KomponentZookeeper.spawnSubContext(this.subContextKey,
-            () => [ new ShowMoreComponent(this.propsBag, this) ]
-        );
-    },
-
-    onDestroyCallback: function() {
-        KomponentZookeeper.clearContext(this.subContextKey);
-    }
 });

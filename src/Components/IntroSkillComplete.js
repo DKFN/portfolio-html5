@@ -13,7 +13,6 @@ export const IntroSkillComplete  = Komponent.extend({
     init: function(propsBag, selfSubKey) {
         this._super(this, propsBag, {shown: false});
         this.subKey = selfSubKey;
-        console.log("Subkey del : ", this.subKey);
         this.render = this.render.bind(this);
         this.onClick = this.onClick.bind(this);
     },
@@ -31,7 +30,6 @@ export const IntroSkillComplete  = Komponent.extend({
     },
 
     onClick() {
-        console.log("Subkey del : ", this.subKey);
         KomponentZookeeper.clearSubContext(this.subKey);
         KomponentZookeeper.reshowContext("introskills");
     }

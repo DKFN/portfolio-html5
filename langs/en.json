@@ -1,13 +1,11 @@
 {
 	"menuEntries": [
 		{"anchor": "about", "title": "Introduction"},
+      {"anchor": "introskills-container", "title": "Skills"},
 		{"anchor": "experience", "title": "Professional Experience"},
 		{"anchor": "education", "title": "Education"},
-		{"anchor": "skills", "title": "Skills"},
-		{"anchor": "teaching", "title": "Teaching"},
 		{"anchor": "projects", "title": "Personal Projects"}
 	],
-	"experiences": [],
 	"intro": {
       "title": "<span class='text-primary'>Scala</span> && Typescript Fullstack Developper",
       "currentPosition": "At <img src='img/cplus.gif' height='16px'/> for <span class='text-primary'>2 years</span> now.",
@@ -20,17 +18,148 @@
         "I mainly do Scala but I am from a Frontend world I am still working on javascript libraries for CanalPlus frontend developpers and some R&D frontend applications."
       ]
     },
-    "skills": [
+  	"experiences": [
+      {
+        "position": "FullStack Scala/Typescript Developper",
+        "description": "Within a crew of 50 persons inside vack of our video streaming plateform.I am challenged by performance and quality on a daily basic., I am working on various projects written in Scala, Java and Typescript . In an Agile, Scrum and eXtreme Programming environement i can pick up various tasks and occasionally do DevOps tasks, RUN (production operations), peer programming, javascript libraries, CLI tools, creating a software factory with CI and CD.",
+        "durationText": "September 2017 - Today",
+        "company": "Canal+",
+        "companyImg": "<img src='img/cplus.gif' height='16px'/>",
+        "showMore": {
+          "projects": [
+            {
+              "title": "HAPI",
+              "backdrop": "noBackdrop",
+              "description": "HAPI is Canal+'s backend REST API it handles content catalog, user curation, video plays, and data aggregations, rights and portal management for catchup and live TV of Canal+ group. Wth a very high request load and a diversity of web cliens (mobile, pc, TVs, etc ...).",
+              "techs": [
+                "Scala",
+                "Play!",
+                "Cassandra",
+                "Redis",
+                "ElasticSearch",
+                "MicroServices",
+                "AWS",
+                "NGINX"
+              ]
+            },
+            {
+              "title": "REAP",
+              "backdrop": "noBackdrop",
+              "description": "REAP is the centralizer of many Canal+ data sources (Plurimedia, CSA, ImDB, Internal tools, etc..) and is a journalized referential database, Besides HAPI, it is also used for external catalogs (Siri, Google, ISPs, Offline mode, etc ...)",
+              "techs": [
+                "Scala",
+                "Play!",
+                "Cassandra",
+                "Kafka",
+                "JSONP",
+                "Redis",
+                "ElasticSearch",
+                "MicroServices",
+                "AWS",
+                "NGINX"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "position": "FullStack PHP/Javascript et Typescript Developper",
+        "description": "Inside of OMNILOG I was a contract developper during 6 months working on a PHP/Zend Framework internal softeware before being sent to the clients office in Canal+ where I finished some tasks on the internal project before working on HAPI and REAP (Details in Canal+ experience).",
+        "company": "Omnilog",
+        "durationText": "September 2016 - August 2017",
+        "showMore": {
+          "projects": [
+            {
+              "title": "IHM Visio",
+              "backdrop": "noBackdrop",
+              "description": "Web Interface showing broadcast graphs, market share analysis and daily reports.",
+              "techs": [
+                "PHP",
+                "Symfony2",
+                "Javascript",
+                "RaphaelJS",
+                "HTML5",
+                "Bootstrap"
+              ]
+            },
+            {
+              "title": "IHM BDDPe : Newsletter V3",
+              "backdrop": "noBackdrop",
+              "description": "New UI and Backend for newsletter creations based on user likes with human overdrive. Tempating language implementation, creation of a broadcast preselection algorithm, a web interface for manual selection and finally communication with the mailling provider's API",
+              "techs": [
+                "PHP",
+                "Zend Framework",
+                "OracleSQL",
+                "JavaScript",
+                "HTML4",
+                "JSON",
+                "REST"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "position": "FullStack C#/Javascript Developper",
+        "description": "C# (ASP .Net, Windows Forms) developper, I was the only developper in a team of 5. NETCORP web agency with some clients (Bally, Bern Stephane, etc ...). It was my first experience in technical debt handling and bringing new feature ti the CMS alogside some internal tools.",
+        "company": "NETCORP Solutions",
+        "durationText": "June 2015 - May 2016",
+        "showMore": {
+          "projects": [
+            {
+              "title": "IHM Devis",
+              "backdrop": "noBackdrop",
+              "description": "WinForms interface to create billing documents and automatically suggest products for sellers.",
+              "techs": [
+                "C#",
+                "WindowsForms",
+                "SQLServer"
+              ]
+            },
+            {
+              "title": "MetroSystem",
+              "backdrop": "noBackdrop",
+              "description": "MetroSystem was the CMS behind all NETCORP website written in C# WebForms and some JavaScript.",
+              "techs": [
+                "C#",
+                "ASP .Net",
+                "SQL Server",
+                "JavaScript",
+                "HTML4"
+              ]
+            }
+          ]
+        }
+      }
+	],
+  "projects": [
+    {
+      "name": "KomponentsJs",
+      "title": "Librairie JS de web components",
+      "description": "Framework JS est un mini framework qui propose un outil de web components et une composition de ceux ci par scene simplifiant le developpement d'applications one page dynamiques. Ce portfolio utilise KomponentsJS"
+    },
+    {
+      "name": "Swirl GraphQL",
+      "title": "Tutoriel pour les debutants en front",
+      "description": "Swirl GraphQL a pour objectif de faire un mini Netflix en quelques semaines avec la technologie GraphQL, il est destine aux developeurs front debutants ou avances."
+    },
+    {
+      "name": "FreightTrain",
+      "title": "Outil CLI pour le linkage de dockers",
+      "description": "FreightTrain permet de simplement creer un reseau de dockers qui interagissent entre eux pour simuler une architecture sur un poste de developpement"
+    }
+  ],
+  "skills": [
       {
         "name": "Scala",
         "rating": 4,
-        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation +. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back",
+        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation fonctionnelle. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back. J'ai encore des lacunes sur certaines parties du language (Macros, Bonnes pratiques avances, sucres syntaxiques)",
         "category": "Profesionnal"
       },
       {
         "name": "GraphQL",
         "rating": 4,
-        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement",
+        "description": "Depuis 2ans, sur une application frontend interne a l'equipe j'utilise GraphQL cote client. Recemment, depuis 1ans j'interviens sur notre service GraphQL ecrit en Scala avec l'aide de Sangria. J'ai egalement donne des formations pour une association de l'EPITA sur le developpement frontend concernant GraphQL",
         "category": "Profesionnal"
       },
       {
@@ -42,25 +171,25 @@
       {
         "name": "JavaScript",
         "rating": 5,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets anciens, de mieux comprendre les technologies et compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
         "category": "Profesionnal"
       },
       {
         "name": "HTML5/CSS3",
         "rating": 5,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "description": "L'HTML me suit depuis mes debuts en programmation. De l'HTML4/CSS2 j'ai connu la transition vers l'HTML5 et le CSS3 et les nombreuses ameliorations apportees par ces iterations.",
         "category": "Profesionnal"
       },
       {
         "name": "ElasticSearch",
         "rating": 4,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "description": "ElasticSearch est le moteur d'indexation de choix des applicatifs Canal+. Outre la definition de templates et l'indexation de donnees, j'ai ete anmmene a maintenir des plugins ElasticSearch ecrits en Java.",
         "category": "Profesionnal"
       },
       {
         "name": "Cassandra",
         "rating": 4,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets ancien, de mieux comprendre les compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "description": "Cassandra est le datastore au centre de nombreux applicatifs au sein de CanalPlus, noSql et extremmement performant, j'ai acquis une bonne experience dans son utilisation dans des applications Scala. Je connais sur le principe ses systemes de replication mais je n'ai jamais administre de cluster cassandra.",
         "category": "Profesionnal"
       },
       {
@@ -71,18 +200,32 @@
       {
         "name": "Formations",
         "rating": 4,
-        "description": "Test"
+        "description": "Divers"
       },
       {
         "name": "Scrum",
         "rating": 4,
-        "description": ""
+        "description": "Depuis mon arrivee chez Canal+, je suis confronte a un environnement de travail Agile Scrum au quotidien, epaule par mes cours sur le sujet j'ai pu m'integrer dans cet environnement qui me plait fortement."
       },
       {
         "name": "Rust",
         "rating": 2,
-        "description": "Au cours de ma mission chez Canal+, j'ai ete en charge des evolutions sur divers technologies frontend avec 2 internes sous ma responsabilite",
+        "description": "L'EPITA m'as introduit a la programmation bas niveau via le C et le C++ j'ai ete attire par le Rust car il arrive a melanger la performance de ces language, les abstractions des languages haut niveau, tout priorisant une approche de programmation fonctionnelle.",
         "category": "Geekly Learning"
       }
+  ],
+  "education": [
+    {
+      "name": "EPITA (Ecole pour l'Informatique et les Techniques Appliquees",
+      "duration": "September 2017 - Today",
+      "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
+      "diploma": "Master d'expertise en ingenierie informatique"
+    },
+    {
+      "name": "Lycee Maximillien Sorre",
+      "duration": "Septembre 2013 - Juillet 2015",
+      "description": "Apres un Baccalaureat STI2D et quelques bases en programmation, le lycee maximillien Sorre m'a donne mes premieres armes pour affronter le monde professionnel notamment en PHP et en OraclSQL/PostgreSQL",
+      "diploma": "BTS Service Informatique aux Organisations"
+    }
   ]
 }

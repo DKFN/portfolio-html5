@@ -1,8 +1,8 @@
 import Type from "lighter-type";
 
 let _Komponent_rKrefs = 0;
-const KOMPONENTS_DEBUG = true;
-const KOMPONENTS_WARN = true;
+const KOMPONENTS_DEBUG = false;
+const KOMPONENTS_WARN = false;
 const KOMPONENTS_ERR = true;
 
 export const Komponent = Type.extend({
@@ -330,6 +330,17 @@ const _KomponentZookeeper = Type.extend({
             KomponentDebug_d("Destroying : ", x);
             x.__destroy();
         });
+    },
+
+    destroyContext(name) {
+        if (!this.onScreenComponents[name])
+            return ;
+
+        this.onScreenComponents[name].forEach(x => {
+            x.__destroy();
+        });
+        this.onScreenComponents[name] = [];
+        this.poppers[name] = [];
     },
 
     randomString: function (len=16, an="A") {

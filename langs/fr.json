@@ -1,10 +1,9 @@
 {
 	"menuEntries": [
 		{"anchor": "about", "title": "Introduction"},
+        {"anchor": "introskills-container", "title": "Competences"},
 		{"anchor": "experience", "title": "Experience Professionelle"},
 		{"anchor": "education", "title": "Etudes"},
-		{"anchor": "skills", "title": "Competences"},
-		{"anchor": "teaching", "title": "Apprentissage"},
 		{"anchor": "projects", "title": "Projets Personnels"}
 	],
     "intro": {
@@ -42,13 +41,30 @@
                 "AWS",
                 "NGINX"
               ]
+            },
+            {
+              "title": "REAP",
+              "backdrop": "noBackdrop",
+              "description": "REAP est l'aggreateur des sources de donnees mutiples de Canal+ (Plurimedia, CSA, ImDB, Logiciels internes, etc..) et sert de referentiel immutable et journalise, il sert aussi pour les exports de donnes pour les catalogues externes (Siri, Google, FAIs, etc ...)",
+              "techs": [
+                "Scala",
+                "Play! Framework",
+                "Cassandra",
+                "Kafka",
+                "JSONP",
+                "Redis",
+                "ElasticSearch",
+                "MicroServices",
+                "AWS",
+                "NGINX"
+              ]
             }
           ]
         }
       },
       {
         "position": "Developpeur FullStack PHP/Javascript et Typescript",
-        "description": "Au sein d'OMNILOG j'ai d'abord ete developpeur sur un projet au forfait pendant 6mois avant de passer en regie chez Canal+ ou j'y ait termine des taches sur le projet au forfait avant de passer a d'autres perimetres.",
+        "description": "Au sein d'OMNILOG j'ai d'abord ete developpeur sur un projet au forfait pendant 6mois avant de passer en regie chez Canal+ ou j'y ait termine des taches sur le projet au forfait avant de travailler sur HAPI et REAP.",
         "company": "Omnilog",
         "durationText": "Septembre 2016 - Aout 2017",
         "showMore": {
@@ -84,7 +100,7 @@
         }
       },
       {
-        "position": "Developpeur FullStack C#/Javascript et Typescript",
+        "position": "Developpeur FullStack C#/Javascript",
         "description": "Developpeur C# (ASP .Net, Windows Forms), seul developpeur au sein d'une petite equipe de 5 personnes. NETCORP Etait une agence Web avec des clients importants (Bally, Stephane Bern, etc ...). Ceci fut ma premiere experience en gestion de Dette Technique et de realisation autonomes d'evolutions sur le CMS ainsi que le developpement de quelques outils internes",
         "company": "NETCORP Solutions",
         "durationText": "Juin 2015 - Mai 2016",
@@ -93,7 +109,7 @@
             {
               "title": "IHM Devis",
               "backdrop": "noBackdrop",
-              "description": "Creation d'une interface qui permet de consulter en temps reel les statistiques de consommation Live et les raports d'audience du CSA pour tous les operateurs francais.",
+              "description": "IHM Devis est une iterface WinForms qui permet d'editer des documents de facturation et proposer aux vendeurs des produits pour les clients ou les prospects.",
               "techs": [
                 "C#",
                 "WindowsForms",
@@ -108,7 +124,7 @@
                 "C#",
                 "ASP .Net",
                 "SQL Server",
-                "JavaScript (commonJS)",
+                "JavaScript",
                 "HTML4"
               ]
             }
@@ -121,43 +137,43 @@
         "name": "Scala",
         "rating": 4,
         "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation fonctionnelle. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back. J'ai encore des lacunes sur certaines parties du language (Macros, Bonnes pratiques avances, sucres syntaxiques)",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "GraphQL",
         "rating": 4,
         "description": "Depuis 2ans, sur une application frontend interne a l'equipe j'utilise GraphQL cote client. Recemment, depuis 1ans j'interviens sur notre service GraphQL ecrit en Scala avec l'aide de Sangria. J'ai egalement donne des formations pour une association de l'EPITA sur le developpement frontend concernant GraphQL",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "TypeScript",
         "rating": 5,
         "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "JavaScript",
         "rating": 5,
         "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets anciens, de mieux comprendre les technologies et compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "HTML5/CSS3",
         "rating": 5,
         "description": "L'HTML me suit depuis mes debuts en programmation. De l'HTML4/CSS2 j'ai connu la transition vers l'HTML5 et le CSS3 et les nombreuses ameliorations apportees par ces iterations.",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "ElasticSearch",
         "rating": 4,
         "description": "ElasticSearch est le moteur d'indexation de choix des applicatifs Canal+. Outre la definition de templates et l'indexation de donnees, j'ai ete anmmene a maintenir des plugins ElasticSearch ecrits en Java.",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "Cassandra",
         "rating": 4,
         "description": "Cassandra est le datastore au centre de nombreux applicatifs au sein de CanalPlus, noSql et extremmement performant, j'ai acquis une bonne experience dans son utilisation dans des applications Scala. Je connais sur le principe ses systemes de replication mais je n'ai jamais administre de cluster cassandra.",
-        "category": "Profesionnal"
+        "category": "Profesionnel"
       },
       {
         "name": "Documentation",
@@ -167,7 +183,7 @@
       {
         "name": "Formations",
         "rating": 4,
-        "description": "Test"
+        "description": "Divers"
       },
       {
         "name": "Scrum",
@@ -190,9 +206,28 @@
     },
     {
       "name": "Lycee Maximillien Sorre",
-      "duration": "Septembre 2014 - Juillet 2016",
-      "description": "Test",
+      "duration": "Septembre 2013 - Juillet 2015",
+      "description": "Apres un Baccalaureat STI2D et quelques bases en programmation, le lycee maximillien Sorre m'a donne mes premieres armes pour affronter le monde professionnel notamment en PHP et en OraclSQL/PostgreSQL",
       "diploma": "BTS Service Informatique aux Organisations"
+    }
+  ],
+  "projects": [
+    {
+      "name": "KomponentsJs",
+      "title": "Librairie JS de web components",
+      "description": "Framework JS est un mini framework qui propose un outil de web components et une composition de ceux ci par scene simplifiant le developpement d'applications one page dynamiques. Ce portfolio utilise KomponentsJS"
+    },
+    {
+      "name": "Swirl GraphQL",
+      "title": "Tutoriel pour les debutants en front",
+      "description": "Swirl GraphQL a pour objectif de faire un mini Netflix en quelques semaines avec la technologie GraphQL, il est destine aux developeurs front debutants ou avances.",
+      "link": "https://github.com/DKFN/Swirl-GraphQL-Subject"
+    },
+    {
+      "name": "FreightTrain",
+      "title": "Outil CLI pour le linkage de dockers",
+      "description": "FreightTrain permet de simplement creer un reseau de dockers qui interagissent entre eux pour simuler une architecture sur un poste de developpement",
+      "link": "https://github.com/DKFN/freighttrain"
     }
   ],
   "generalText": {
