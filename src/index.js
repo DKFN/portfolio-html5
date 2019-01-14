@@ -1,4 +1,4 @@
-import {KomponentZookeeper} from "./komponents";
+import {getParameterByName, KomponentZookeeper} from "./komponents";
 import {LangComponent} from "./Components/LangComponent";
 import {IntroComponent} from "./Components/IntroComponent"
 import {LoaderComponent} from "./Components/LoaderComponent";
@@ -7,6 +7,7 @@ import {MenuEntry} from "./Components/MenuEntry";
 import {ExperienceEntry} from "./Components/ExperienceEntry";
 import {EducationEntry} from "./Components/EducationEntry";
 import {ProjectEntry} from "./Components/ProjectEntry";
+import {MailSentComponent} from "./Components/MailSent";
 
 export const Index = () => {
         const langContext = () => {
@@ -68,6 +69,12 @@ export const Index = () => {
             ];
         };
 
+        const mailSentContext = () => {
+            return [
+                new MailSentComponent()
+            ];
+        };
+
 
         // Here it is how I fetch the lang for the user, see I spawn the
         const fetchData = (targetLang) => {
@@ -76,6 +83,7 @@ export const Index = () => {
             KomponentZookeeper.clearContext("edu");
             KomponentZookeeper.clearContext("introskills");
             KomponentZookeeper.clearContext("projects");
+            KomponentZookeeper.clearContext("mailsent");
 
             $.ajax({
                 url: "static/langs/" + targetLang + ".json",
@@ -88,6 +96,7 @@ export const Index = () => {
                     KomponentZookeeper.registerContext("edu", educationContext(data));
                     KomponentZookeeper.registerContext("introskills", skillsContext(data));
                     KomponentZookeeper.registerContext("projects", projectContext(data));
+                    KomponentZookeeper.registerContext("mailsent", mailSentContext);
                     setTimeout(() => {
                         $(document).ready(() => {
                             KomponentZookeeper.reshowContext("index");
@@ -95,6 +104,8 @@ export const Index = () => {
                             KomponentZookeeper.reshowContext("edu");
                             KomponentZookeeper.reshowContext("introskills");
                             KomponentZookeeper.reshowContext("projects");
+                            if (getParameterByName("sendmail"))
+                                KomponentZookeeper.reshowContext("mailsent");
                             KomponentZookeeper.clearContext("default");
                         });
                     }, 100);

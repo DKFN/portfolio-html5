@@ -135,67 +135,71 @@
   "projects": [
     {
       "name": "KomponentsJs",
-      "title": "Librairie JS de web components",
-      "description": "Framework JS est un mini framework qui propose un outil de web components et une composition de ceux ci par scene simplifiant le developpement d'applications one page dynamiques. Ce portfolio utilise KomponentsJS"
+      "title": "Javascript web components library",
+      "description": "This is a light component framework written with JQuery and in commonJs with some ES6 features. This portfolio runs KomponentsJS",
+      "link": "https://github.com/DKFN/portfolio-html5"
     },
     {
       "name": "Swirl GraphQL",
-      "title": "Tutoriel pour les debutants en front",
-      "description": "Swirl GraphQL a pour objectif de faire un mini Netflix en quelques semaines avec la technologie GraphQL, il est destine aux developeurs front debutants ou avances."
+      "title": "Tutorial for frontend beginners",
+      "description": "The goal of this tutorial is to make a mini Netflix, it was made for both advanced and begineer frontend developpers.",
+      "link": "https://github.com/DKFN/Swirl-GraphQL-Subject"
     },
     {
       "name": "FreightTrain",
-      "title": "Outil CLI pour le linkage de dockers",
-      "description": "FreightTrain permet de simplement creer un reseau de dockers qui interagissent entre eux pour simuler une architecture sur un poste de developpement"
+      "title": "CLI tools for docker linking",
+      o"description": "FreightTrain allows easy linking to mock a full architecture on a developpement computer.",
+      "link": "https://github.com/DKFN/freighttrain"
+
     }
   ],
   "skills": [
       {
         "name": "Scala",
         "rating": 4,
-        "description": "Depuis 2ans j'ai appris mes bases en Scala avec Canal ce qui m'a introduit a la programmation fonctionnelle. En dehors du travail j'ai realise quelques projets personnels en Scala tel que FreightTrain et Swirl-GraphQL-Back. J'ai encore des lacunes sur certaines parties du language (Macros, Bonnes pratiques avances, sucres syntaxiques)",
+        "description": "Since 2 years I have been working profesionnally with Scala and I have trained myself with some personnal projects. Altrough I am fairly advanced I am not yet an expert",
         "category": "Profesionnal"
       },
       {
         "name": "GraphQL",
         "rating": 4,
-        "description": "Depuis 2ans, sur une application frontend interne a l'equipe j'utilise GraphQL cote client. Recemment, depuis 1ans j'interviens sur notre service GraphQL ecrit en Scala avec l'aide de Sangria. J'ai egalement donne des formations pour une association de l'EPITA sur le developpement frontend concernant GraphQL",
+        "description": "I have been using GraphQL frontend side for 2 years now and since a year I am also working with the Scala GraphQL gateway of our service.",
         "category": "Profesionnal"
       },
       {
         "name": "TypeScript",
         "rating": 5,
-        "description": "Depuis 4ans je travaille avec TypeScript profesionnellement et personnellement d'abord avec Angular2 puis avec ReactJS. C'est actuellement mon language de choix pour mes interfaces frontend bien que Rust avec yew m'interesse fortement",
+        "description": "I work with TypeScript for four years now both profesionnally and personally. I love using ReactJS with it and I have developped many of my frontend works using it.",
         "category": "Profesionnal"
       },
       {
         "name": "JavaScript",
         "rating": 5,
-        "description": "Depuis mes debuts en programmation Web, mes competentences en JavaScript natif m'ont permis de maintenir des projets anciens, de mieux comprendre les technologies et compilateurs JavaScript modernes et de constuire des applications legeres avec tres peu de dependances (comme ce portfolio)",
+        "description": "I have been using JavaScript since my early days in Web Developement back when I was 13 years old. Using this native skills, I am able to understand conceps in advanced frontend libraries and re-apply them in smaller scale applications (like this portfolio).",
         "category": "Profesionnal"
       },
       {
         "name": "HTML5/CSS3",
         "rating": 5,
-        "description": "L'HTML me suit depuis mes debuts en programmation. De l'HTML4/CSS2 j'ai connu la transition vers l'HTML5 et le CSS3 et les nombreuses ameliorations apportees par ces iterations.",
+        "description": "I have known HTML since HTML4 and CSS2 and I have lived the blessed switch between HTML4/CSS2 to HTML5/CSS3",
         "category": "Profesionnal"
       },
       {
         "name": "ElasticSearch",
         "rating": 4,
-        "description": "ElasticSearch est le moteur d'indexation de choix des applicatifs Canal+. Outre la definition de templates et l'indexation de donnees, j'ai ete anmmene a maintenir des plugins ElasticSearch ecrits en Java.",
+        "description": "ElasticSearch is the indexing engine at Canal+. Besides normal usage, I also had to maintain an Elasticsearch plugin written in Java for movie curation.",
         "category": "Profesionnal"
       },
       {
         "name": "Cassandra",
         "rating": 4,
-        "description": "Cassandra est le datastore au centre de nombreux applicatifs au sein de CanalPlus, noSql et extremmement performant, j'ai acquis une bonne experience dans son utilisation dans des applications Scala. Je connais sur le principe ses systemes de replication mais je n'ai jamais administre de cluster cassandra.",
+        "description": "Cassandra is the datastore of many Canal+ applications, I have learnt to use it in highly scalled applications and understands its concepts..",
         "category": "Profesionnal"
       },
       {
         "name": "Documentation",
         "rating": 3,
-        "description": "J'ai du a de nombreuses reprises entretenir et enrichir les documentations de certains projets simples ou complexes."
+        "description": "Like anyone, I care to make the documentation evolve alongside my changes. Even if I tend to reduce documentation in code to a strict necessity because I'd rather make my code clearer.",
       },
       {
         "name": "Formations",
@@ -216,16 +220,16 @@
   ],
   "education": [
     {
-      "name": "EPITA (Ecole pour l'Informatique et les Techniques Appliquees",
+      "name": "EPITA (Ecole pour l'Informatique et les Techniques Appliquees)",
       "duration": "September 2017 - Today",
-      "description": "Apres une premiere experience profesionnelle d'un an, j'ai decide de reprendre mes etudes afin d'en apprendre plus sur certains aspects de la programmation qui m;etait inconnus alors (Programmation systeme, jeux videos, algorithmie avancee",
-      "diploma": "Master d'expertise en ingenierie informatique"
+      "description": "After a year of full time professional experience I wanted to take back on my studies to explore new paths in my ways of programming and learn new technics (Systems, Video Games, Software, etc ...)",
+      "diploma": "Expert Computer Engineering Degree"
     },
     {
       "name": "Lycee Maximillien Sorre",
       "duration": "Septembre 2013 - Juillet 2015",
-      "description": "Apres un Baccalaureat STI2D et quelques bases en programmation, le lycee maximillien Sorre m'a donne mes premieres armes pour affronter le monde professionnel notamment en PHP et en OraclSQL/PostgreSQL",
-      "diploma": "BTS Service Informatique aux Organisations"
+      "description": "This is were I learnt all my basics in web developpement and profesionnal ways of programming.",
+      "diploma": "Technical Bachelor in Software Developpement for Corporations."
     }
   ]
 }

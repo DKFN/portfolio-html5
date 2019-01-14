@@ -27,7 +27,7 @@
 
   <body id="page-top">
 
-    <div id="modal-container">
+    <div id="mail-container">
 
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -99,7 +99,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto" style="width: 100%;">
             <h2 class="mb-5">Contact</h2>
-              <form>
+              <form method="POST" action="?sendmail">
               <b>Email :</b><br />
               <input type="email" name="contact-email"/><hr />
               <b>Titre :</b><br />
@@ -108,7 +108,7 @@
               <textarea name="contact-text">
 
               </textarea><hr />
-              <input type="submit" onclick="trick"/>
+              <input type="submit"/>
               </form>
             </div>
           </div>

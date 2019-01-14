@@ -21,7 +21,3 @@ export const StarFreeComponent = FreeKomponent.extend({
         return `<div> ${arr.join("")} </div>`;
     },
 });
-
-function trick() {
-    $("#contact").append('<div class="success-text">Votre mail a bien ete envoye</div>');
-}

@@ -215,7 +215,8 @@
     {
       "name": "KomponentsJs",
       "title": "Librairie JS de web components",
-      "description": "Framework JS est un mini framework qui propose un outil de web components et une composition de ceux ci par scene simplifiant le developpement d'applications one page dynamiques. Ce portfolio utilise KomponentsJS"
+      "description": "KomponentsJS est un mini framework qui propose un outil de web components et une composition de ceux ci par scene simplifiant le developpement d'applications one page dynamiques. Ce portfolio utilise KomponentsJS",
+      "link": "https://github.com/DKFN/portfolio-html5"
     },
     {
       "name": "Swirl GraphQL",

@@ -12,6 +12,7 @@ module.exports = {
       { from: 'img/**/*', to: 'static' },
       { from: 'langs/**/*', to: 'static' },
       { from: 'vendor/**/*', to: 'static'},
+      { from: 'favicon.ico*', to: 'favicon.ico'},
         { from: 'index.html', to: 'index.html'},
     ])
   ],
